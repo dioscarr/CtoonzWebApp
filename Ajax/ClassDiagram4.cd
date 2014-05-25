@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Ajax.person">
+    <Position X="11" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAEAEAAAEAAAEAQEYAAAAAIAACAAIAAAAkAAg=</HashCode>
+      <FileName>Person.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ajax.Customer">
+    <Position X="13.25" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgAAgIgAAAAARAAAAAwAAAKAAABAAEEQAAAAAAQECAA=</HashCode>
+      <FileName>Customer.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ajax.CustomerList" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgIAgIgAAAAAhAAABAQQBgaEIAAAAEACAAAAAABECAA=</HashCode>
+      <FileName>CustomerList.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ajax.BusinessCollectionBase" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>BusinessCollectionBase.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ajax.BusinessBase">
+    <Position X="9.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAgCAAAAAAAEAAMBAAAAAAAEADAQIAAAA=</HashCode>
+      <FileName>BusinessBase.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Collections.DictionaryBase" Collapsed="true">
+    <Position X="0.5" Y="0.75" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.148" />
+  </Class>
+  <Class Name="Ajax.WebForm2">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAgAQAEAACQAAwAAAAAAgAAIAIwBGkAQAABEIAkQY=</HashCode>
+      <FileName>SongsManagement.aspx.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
