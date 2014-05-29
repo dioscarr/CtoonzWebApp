@@ -18,7 +18,8 @@ Public Class Customer
     '********************************************************************************************************
     'Private Const strConn As String = "Data Source=HOME-VAIO\DRSQL;Initial Catalog=myssqldatabase;Integrated Security=True"
     'Catalog=mysqldatabase;Integrated Security=True
-    Private Const strConn As String = "Data Source=mysqldtabase.mssql.somee.com;User ID=dioscarr_SQLLogin_1;Password=dmc10040"
+    ' Private Const strConn As String = "Data Source=mysqldtabase.mssql.somee.com;User ID=dioscarr_SQLLogin_1;Password=dmc10040"
+    Private Const strConn As String = " Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\ctoonz\Source\Repos\CtoonzWebApp\Ajax\App_Data\Songs.mdf;Integrated Security=True"
 #End Region
 
 #Region "Private data members:"

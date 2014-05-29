@@ -102,6 +102,10 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="App_Data\Songs.mdf" />
+    <Content Include="App_Data\Songs_log.ldf">
+      <DependentUpon>Songs.mdf</DependentUpon>
+    </Content>
     <Content Include="images\simplehead.png" />
     <Content Include="jwplayer\jwplayer.flash.swf" />
     <Content Include="path.aspx" />
@@ -302,7 +306,6 @@
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="MP3\" />
     <Folder Include="NewFolder1\" />
     <Folder Include="upfile\" />
