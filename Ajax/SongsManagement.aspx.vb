@@ -5,6 +5,25 @@
     Private objCustomerList As CustomerList
     Dim objrb As New RadioButtonList
     Dim path As String
+    Public Class song
+        Shared Function TrackUrl(ByRef ID As String) As String
+            Dim path As String = ""
+
+            Dim objcustomer As New Customer
+
+            If Not ID = "" Then
+                objcustomer.Load(ID)
+
+                path = objcustomer.TrackUrl.ToString
+            Else
+
+            End If
+
+            Return path
+        End Function
+
+
+    End Class
     Public songpath As String
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then

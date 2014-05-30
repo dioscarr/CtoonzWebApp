@@ -10,6 +10,12 @@
   <table id="Lyrics" width="580px"  border="0" style="color:black; font-size:11px; background:white; padding:40px; padding-left:50px;">
     <tr>
         <td>
-    <asp:Label ID="mytext" runat="server" Text="mytext"></asp:Label></td></tr></table>
+    <asp:Label ID="Mytext" runat="server" Text="mytext"></asp:Label>
+
+        </td>
+
+    </tr>
+
+  </table>
 </body>
 </html>

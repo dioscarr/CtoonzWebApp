@@ -13,7 +13,8 @@ Public Class WebForm7
 
         If Not myString = "" Then
             objcustomer.Load(myString)
-            path.Text = objcustomer.TrackUrl
+
+            path.Text = objcustomer.TrackUrl.ToString
         Else
 
         End If

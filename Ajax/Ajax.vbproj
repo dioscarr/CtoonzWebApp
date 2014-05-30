@@ -147,6 +147,7 @@
     <Content Include="Lyrics.aspx" />
     <Content Include="PasteLyricspg.aspx" />
     <Content Include="path.aspx" />
+    <Content Include="WebForm9.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.designer.vb">
@@ -293,6 +294,13 @@
     </Compile>
     <Compile Include="path.aspx.vb">
       <DependentUpon>path.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebForm9.aspx.designer.vb">
+      <DependentUpon>WebForm9.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm9.aspx.vb">
+      <DependentUpon>WebForm9.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

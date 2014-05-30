@@ -468,7 +468,7 @@
                       var Status = $(this).find("td:nth-child(4) ").text();
                       var Album = $(this).find("td:nth-child(5) ").text();
                       //window.location.href = 'Edit.aspx?ID=' + ID; //+ '&Track=' + Track + '&Artist=' + Artist + '&Status=' + Status + '&Album=' + Album;
-
+                     
 
                       $('.product').remove();
                       //Add 
@@ -483,14 +483,14 @@
                             '<td id="mmm"> </td>' +
                           '</tr>');
                       var songpath = ""
-
+                      
                       $('.product .myLyricsUrl').load('Lyrics.aspx', { ID: ID }, function () {
                           $('.product ').hide();
 
 
                           $('#mytext').css('color', 'red');
                           $('#Lyrics').find('tbody tr').html('<button id="MyLyricsUpload" >Upload Lyrics</button>')
-
+                        
 
                           //Edit Button css
                           $('#myEdit').css("color", "#1E90FF");
@@ -508,13 +508,15 @@
                           $('#MyLyricsUpload').css("left", "150px");
                           $('#MyLyricsUpload').css("width", "126px");
                           $('#MyLyricsUpload').css("height", "40px");
-
+                          
                           $('.product').fadeIn(2000);
                           //Load the Player
+                          songpath <%= songsmanagement_aspx.song.TrackUrl(ID)%>;
                           $('#mmm').load('path.aspx #path', { ID: ID }, function () {
-                              songpath = $('#path').html();
+                              //songpath = $('#path').html();
+                              alert(songpath);
                               var substr = songpath.substring(songpath.indexOf('MP3'));
-
+                              
                               jwplayer("myElement").setup({
 
                                   file: substr,
@@ -584,17 +586,7 @@
 
 
 
-            $("#jquery_jplayer_1").jPlayer({
-                ready: function (event) {
-                    $(this).jPlayer("setMedia", {
-                        title: "Cro Magnon Man",
-                        mp3: "http://jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
-                        oga: "http://jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg"
-                    });
-                },
-                swfPath: "http://jplayer.org/latest/js",
-                supplied: "mp3, oga"
-            });
+           
 
 
             $('.listbox').css('background', 'green');

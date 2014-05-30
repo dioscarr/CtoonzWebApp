@@ -17,7 +17,8 @@ Public Class WebForm5
             Dim sr As StreamReader = New StreamReader(objCustomer.LyricsUrl)
 
             Do While sr.Peek() >= 0
-                mytext.Text += sr.ReadLine() + "<br/>"
+
+                Mytext.Text += sr.ReadLine() + "<br/>"
             Loop
             sr.Close()
 
