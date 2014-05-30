@@ -138,6 +138,7 @@
     <Content Include="ServerResponse.aspx" />
     <Content Include="Edit.aspx" />
     <Content Include="Lyrics.aspx" />
+    <Content Include="PasteLyricspg.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.designer.vb">
@@ -277,6 +278,13 @@
     </Compile>
     <Compile Include="twiiterapp.aspx.vb">
       <DependentUpon>twiiterapp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PasteLyricspg.aspx.designer.vb">
+      <DependentUpon>PasteLyricspg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasteLyricspg.aspx.vb">
+      <DependentUpon>PasteLyricspg.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
