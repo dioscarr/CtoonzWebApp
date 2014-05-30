@@ -14,7 +14,7 @@ Public Class WebForm5
        
         If Not path = "" Then
 
-            Dim sr As StreamReader = New StreamReader(objCustomer.LyricsUrl, Encoding.UTF8)
+            Dim sr As StreamReader = New StreamReader(objCustomer.LyricsUrl, Encoding.)
 
             Do While sr.Peek() >= 0
                 mytext.Text += sr.ReadLine() + "<br/>"
