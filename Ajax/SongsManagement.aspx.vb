@@ -45,10 +45,7 @@
                 objCustomerList = New CustomerList
             End If
 
-            If FileUpload1.HasFile = True Then
-                path = Server.MapPath("~/upfile/" + FileUpload1.FileName.ToString())
-                FileUpload1.SaveAs(path)
-            End If
+         
             If FileUpload2.HasFile = True Then
                 songpath = Server.MapPath("~/MP3/" + FileUpload2.FileName.ToString())
                 FileUpload2.SaveAs(songpath)

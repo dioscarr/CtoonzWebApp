@@ -107,6 +107,23 @@
             .auto-style3 {
                 width: 95px;
             }
+            .auto-style4 {
+                height: 29px;
+            }
+            .auto-style5 {
+                width: 95px;
+                height: 29px;
+            }
+            .auto-style6 {
+                width: 81px;
+            }
+            .auto-style7 {
+                width: 158px;
+            }
+            .auto-style8 {
+                width: 158px;
+                height: 29px;
+            }
         </style>
 
 </asp:Content>
@@ -115,11 +132,6 @@
     <div id="rightsidebarparent" style="position:relative;"> 
         <div id="logoheads"></div>
         <div id="mylogo123"></div>
-        <div id="rightsidebar"><span id="mywelcome">Welcome !!!</span><br />
-            <span style="font-size:12px;">You are Loggeg in as Ctoonz</span>
-            <br />
-           <span style="font-size:12px;"> Date 2/17/2013</span>
-        </div>
    
 
 
@@ -157,8 +169,8 @@
 <td style="text-align:right;" class="auto-style1">Status</td>
 <td class="auto-style2"> <asp:TextBox ID="txtSSNum" runat="server" Width="96px"></asp:TextBox>
         </td>
-<td style="width:97px; text-align:right;">Album Name:</td>
-<td style="width:97px;"> <asp:TextBox ID="txtAlbum" runat="server" Width="94px"></asp:TextBox>
+<td style="text-align:right;" class="auto-style6">Album Name:</td>
+<td class="auto-style7"> <asp:TextBox ID="txtAlbum" runat="server" Width="94px"></asp:TextBox>
         </td>
 <td class="auto-style3"> 
             <asp:Button ID="btnAdd" runat="server" 
@@ -166,18 +178,20 @@
 
 
 </tr>
-    <tr><td colspan="7">
-        <asp:FileUpload ID="FileUpload1" runat="server" Width="196px" />
-             <asp:Label ID="fileoutput" runat="server" Text="Label"></asp:Label>
+    <tr>
+        <td colspan="4" class="auto-style4">
+             <asp:Label ID="fileoutput0" runat="server" Text="Select MP3 Track "></asp:Label>
+             <asp:FileUpload ID="FileUpload2" runat="server" Width="283px" />
+             <br />
         </td>
-        <td>
-             <asp:FileUpload ID="FileUpload2" runat="server" Width="151px" />
+        <td colspan="5"  class="auto-style8">
+             <br />
         </td>
-         <td class="auto-style3">
+         <td class="auto-style5">
             
     </tr>
 
-</table>
+</table> 
 
                 </div>
             </div>
