@@ -408,12 +408,13 @@
                       var Album = $(this).find("td:nth-child(5) ").text();
                       //window.location.href = 'Edit.aspx?ID=' + ID; //+ '&Track=' + Track + '&Artist=' + Artist + '&Status=' + Status + '&Album=' + Album;
                      
+
                       $('.product').remove();
+                      //Add 
                       $(this).closest('tr').after('<tr class="product" style="border:2px solid lightgrey; background:white;">'+
                           '<td class="myLyricsUrl" colspan="3" style="border:1px solid lightgrey;" ></td>' +
                             '<td colspan="2" id="myothercont" style="background:black;  height:500px;" " >' +
                                     '<button id="myEdit" >Edit</button>' +
-                                     '<button id="mySongUpload" >Upload Track</button>' +
                                     '<div id="myPlayer">' +
                                         '<div id="myElement">Loading the player...</div>' +
                                     '</div>' +
@@ -421,9 +422,14 @@
                             '<td id="mmm"> </td>'+
                           '</tr>');
                       var songpath = ""
-
+                      
                     $('.product .myLyricsUrl').load('Lyrics.aspx', { ID: ID }, function () {
                           $('.product ').hide();
+                       
+                        
+                          $('#mytext').css('color', 'red');
+                          $('#Lyrics').find('tbody tr').html('<button id="MyLyricsUpload" >Upload Lyrics</button>')
+
 
                           //Edit Button css
                           $('#myEdit').css("color", "#1E90FF");
@@ -433,16 +439,17 @@
                           $('#myEdit').css("left", "20px");
                           $('#myEdit').css("width", "126px");
                           $('#myEdit').css("height", "40px");
-
-                          $('#mySongUpload').css("color", "red");
-                          $('#mySongUpload').css("font-size", "16px");
-                          $('#mySongUpload').css("position", "relative");
-                          $('#mySongUpload').css("top", "-160px");
-                          $('#mySongUpload').css("left", "30px");
-                          $('#mySongUpload').css("width", "126px");
-                          $('#mySongUpload').css("height", "40px");
+                        //Upload Lyrics button css
+                          $('#MyLyricsUpload').css("color", "#1E90FF");
+                          $('#MyLyricsUpload').css("font-size", "16px");
+                          $('#MyLyricsUpload').css("position", "relative");
+                          $('#MyLyricsUpload').css("top", "0px");
+                          $('#MyLyricsUpload').css("left", "150px");
+                          $('#MyLyricsUpload').css("width", "126px");
+                          $('#MyLyricsUpload').css("height", "40px");
+                 
                           $('.product').fadeIn(2000);
-  
+                            //Load the Player
                           $('#mmm').load('path.aspx #path', { ID: ID }, function () {
                               songpath = $('#path').html();
                               var substr = songpath.substring(songpath.indexOf('MP3'));
@@ -460,12 +467,23 @@
                               });
                           });
                           $('#mmm').hide();                   
-                      });
+                    });
+                    
+                      //Upload Lyrics action URL
+                    $('#MyLyricsUpload').live('click', function () {
+                        window.location.href = 'Edit.aspx?ID=' + ID;
+                    });
+                      //Edit data action URL
                       $('#myEdit').click(function () {
-                          window.location.href = 'Edit.aspx?ID=' + ID;
-                      });          
+                        window.location.href = 'Edit.aspx?ID=' + ID;
+                    });
+                      
+                   
+                   
+                   
                   }
                   else {
+                      
                   }       
               }, function () {
 
@@ -605,8 +623,9 @@
                           $('#myEdit').click(function () {
                               window.location.href = 'Edit.aspx?ID=' + ID;
                           });
-                          
-
+                          $('#mytext').on('Click', '#MyLyricsUpload', function () {
+                              window.location.href = 'Edit.aspx?ID=' + ID;
+                          });
                   }
                   else {
                   }
