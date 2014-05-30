@@ -107,13 +107,20 @@
       <DependentUpon>Songs.mdf</DependentUpon>
     </Content>
     <Content Include="images\simplehead.png" />
-    <Content Include="jwplayer\jwplayer.flash.swf" />
-    <Content Include="path.aspx" />
+    <Content Include="js1\add-on\jplayer.playlist.min.js" />
+    <Content Include="js1\add-on\jquery.jplayer.inspector.js" />
+    <Content Include="js1\Jplayer.swf" />
+    <Content Include="js1\jquery.jplayer.min.js" />
+    <Content Include="js1\popcorn\popcorn.jplayer.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jwplayer.html5.js" />
     <Content Include="Scripts\jwplayer.js" />
     <Content Include="ScrollableGrid.js" />
+    <Content Include="skin\jplayer.blue.monday.css" />
+    <Content Include="skin\jplayer.blue.monday.jpg" />
+    <Content Include="skin\jplayer.blue.monday.seeking.gif" />
+    <Content Include="skin\jplayer.blue.monday.video.play.png" />
     <Content Include="startpage.aspx" />
     <Content Include="Styles\jquery-ui.css" />
     <Content Include="Styles\Site.css" />
@@ -139,6 +146,7 @@
     <Content Include="Edit.aspx" />
     <Content Include="Lyrics.aspx" />
     <Content Include="PasteLyricspg.aspx" />
+    <Content Include="path.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.designer.vb">
@@ -209,13 +217,6 @@
     </Compile>
     <Compile Include="CustomerList.vb" />
     <Compile Include="BusinessCollectionBase.vb" />
-    <Compile Include="path.aspx.designer.vb">
-      <DependentUpon>path.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="path.aspx.vb">
-      <DependentUpon>path.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Person.vb" />
     <Compile Include="Site.Master.designer.vb">
       <DependentUpon>Site.Master</DependentUpon>
@@ -287,6 +288,13 @@
       <DependentUpon>PasteLyricspg.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="path.aspx.designer.vb">
+      <DependentUpon>path.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="path.aspx.vb">
+      <DependentUpon>path.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -312,10 +320,11 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <Content Include="Site.Master" />
+    <Content Include="skin\jPlayer_blue.monday_extd.psd" />
+    <Content Include="skin\spirites_blue.monday_2011.psd" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MP3\" />
-    <Folder Include="NewFolder1\" />
     <Folder Include="upfile\" />
   </ItemGroup>
   <PropertyGroup>

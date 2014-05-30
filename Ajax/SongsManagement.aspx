@@ -290,6 +290,64 @@
 
 </div>
 
+
+
+
+
+
+
+
+
+<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+
+<div id="jp_container_1" class="jp-audio">
+    <div class="jp-type-single">
+        <div class="jp-gui jp-interface">
+            <ul class="jp-controls">
+                
+                <!-- comment out any of the following <li>s to remove these buttons -->
+                
+                <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+                <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+                <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+                <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+                <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+                <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+            </ul>
+            
+            <!-- you can comment out any of the following <div>s too -->
+            
+            <div class="jp-progress">
+                <div class="jp-seek-bar">
+                    <div class="jp-play-bar"></div>
+                </div>
+            </div>
+            <div class="jp-volume-bar">
+                <div class="jp-volume-bar-value"></div>
+            </div>
+            <div class="jp-current-time"></div>
+            <div class="jp-duration"></div>                   
+        </div>
+        <div class="jp-details">
+            <ul>
+                <li><span class="jp-title"></span></li>
+            </ul>
+        </div>
+        <div class="jp-no-solution">
+            <span>Update Required</span>
+            To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
 <script type="text/javascript" src="Scripts/jwplayer.js"></script>
 
 
@@ -302,6 +360,9 @@
 
 
        
+
+
+
       
     <script src="Scripts/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>
     <script src="Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
@@ -311,10 +372,10 @@
 <script type="text/javascript">
     //***********************************************************************************************************************************************************
 
-  
+
     $(document).ready(function () {
 
-       
+
 
         $("#MainContent_GridView1 tr").find("th").addClass('newcolor');
         $("#MainContent_GridView1 ").find("*").css("border", "none");
@@ -337,10 +398,10 @@
         $("#MainContent_GridView1 tr").find("td:nth-child(5) ").css("width", "150px");
 
         //var ID = $(this).find("td:nth-child(1) ").text();
-       // var Track = $(this).find("td:nth-child(2) ").text();
-       // var Artist = $(this).find("td:nth-child(3) ").text();
-       // var Status = $(this).find("td:nth-child(4) ").text();
-       // var Album = $(this).find("td:nth-child(5) ").text();
+        // var Track = $(this).find("td:nth-child(2) ").text();
+        // var Artist = $(this).find("td:nth-child(3) ").text();
+        // var Status = $(this).find("td:nth-child(4) ").text();
+        // var Album = $(this).find("td:nth-child(5) ").text();
 
         $('#btnFilter').hide();
         $('#<%=txtFiltrerID.ClientID %>').hide();
@@ -398,7 +459,7 @@
 
                   var ID = $(this).find("th:nth-child(1) ").text();
                   $(this).find('td').css("color", "black");
-                  
+
                   if (ID != "ID") {
 
                       var ID = $(this).find("td:nth-child(1) ").text();
@@ -407,11 +468,11 @@
                       var Status = $(this).find("td:nth-child(4) ").text();
                       var Album = $(this).find("td:nth-child(5) ").text();
                       //window.location.href = 'Edit.aspx?ID=' + ID; //+ '&Track=' + Track + '&Artist=' + Artist + '&Status=' + Status + '&Album=' + Album;
-                     
+
 
                       $('.product').remove();
                       //Add 
-                      $(this).closest('tr').after('<tr class="product" style="border:2px solid lightgrey; background:white;">'+
+                      $(this).closest('tr').after('<tr class="product" style="border:2px solid lightgrey; background:white;">' +
                           '<td class="myLyricsUrl" colspan="3" style="border:1px solid lightgrey;" ></td>' +
                             '<td colspan="2" id="myothercont" style="background:black;  height:500px;" " >' +
                                     '<button id="myEdit" >Edit</button>' +
@@ -419,14 +480,14 @@
                                         '<div id="myElement">Loading the player...</div>' +
                                     '</div>' +
                             '</td>' +
-                            '<td id="mmm"> </td>'+
+                            '<td id="mmm"> </td>' +
                           '</tr>');
                       var songpath = ""
-                      
-                    $('.product .myLyricsUrl').load('Lyrics.aspx', { ID: ID }, function () {
+
+                      $('.product .myLyricsUrl').load('Lyrics.aspx', { ID: ID }, function () {
                           $('.product ').hide();
-                       
-                        
+
+
                           $('#mytext').css('color', 'red');
                           $('#Lyrics').find('tbody tr').html('<button id="MyLyricsUpload" >Upload Lyrics</button>')
 
@@ -439,7 +500,7 @@
                           $('#myEdit').css("left", "20px");
                           $('#myEdit').css("width", "126px");
                           $('#myEdit').css("height", "40px");
-                        //Upload Lyrics button css
+                          //Upload Lyrics button css
                           $('#MyLyricsUpload').css("color", "#1E90FF");
                           $('#MyLyricsUpload').css("font-size", "16px");
                           $('#MyLyricsUpload').css("position", "relative");
@@ -447,15 +508,15 @@
                           $('#MyLyricsUpload').css("left", "150px");
                           $('#MyLyricsUpload').css("width", "126px");
                           $('#MyLyricsUpload').css("height", "40px");
-                 
+
                           $('.product').fadeIn(2000);
-                            //Load the Player
+                          //Load the Player
                           $('#mmm').load('path.aspx #path', { ID: ID }, function () {
                               songpath = $('#path').html();
                               var substr = songpath.substring(songpath.indexOf('MP3'));
-                             
+
                               jwplayer("myElement").setup({
-                                  
+
                                   file: substr,
                                   image: "images/simplehead.png",
                                   width: "280",
@@ -466,25 +527,25 @@
                                            }
                               });
                           });
-                          $('#mmm').hide();                   
-                    });
-                    
+                          $('#mmm').hide();
+                      });
+
                       //Upload Lyrics action URL
-                    $('#MyLyricsUpload').live('click', function () {
-                        window.location.href = 'Edit.aspx?ID=' + ID;
-                    });
+                      $('#MyLyricsUpload').live('click', function () {
+                          window.location.href = 'Edit.aspx?ID=' + ID;
+                      });
                       //Edit data action URL
                       $('#myEdit').click(function () {
-                        window.location.href = 'Edit.aspx?ID=' + ID;
-                    });
-                      
-                   
-                   
-                   
+                          window.location.href = 'Edit.aspx?ID=' + ID;
+                      });
+
+
+
+
                   }
                   else {
-                      
-                  }       
+
+                  }
               }, function () {
 
                   $('.product').remove();
@@ -523,6 +584,17 @@
 
 
 
+            $("#jquery_jplayer_1").jPlayer({
+                ready: function (event) {
+                    $(this).jPlayer("setMedia", {
+                        title: "Cro Magnon Man",
+                        mp3: "http://jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
+                        oga: "http://jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg"
+                    });
+                },
+                swfPath: "http://jplayer.org/latest/js",
+                supplied: "mp3, oga"
+            });
 
 
             $('.listbox').css('background', 'green');
@@ -579,16 +651,16 @@
                 $(tr[i]).show();
             }
         });
-//        function yes() {
-//            $('#clickmetoo').trigger("click");
-//        }
+        //        function yes() {
+        //            $('#clickmetoo').trigger("click");
+        //        }
         $('#clickmetoo').trigger("click"); // trigger click event on the span with ID clickmetoo
 
 
 
-//        $("#btnFilter").click(function () {
-//            yes();
-//        });
+        //        $("#btnFilter").click(function () {
+        //            yes();
+        //        });
 
 
 
@@ -615,17 +687,17 @@
                       $('.product').remove();
                       $(this).closest('tr').after('<tr class="product" style="border:1px solid black; background:white;"><td class="myLyricsUrl" colspan="3"  style=""></td><td colspan="2" style="border:none;"><button id="myEdit">Edit</button></td></tr>');
                       $('.product .myLyricsUrl').load('Lyrics.aspx', { ID: ID }, function () {
-                        
+
                           $('.product').hide();
                           $('.product').fadeIn(2000);
-                         
-                          });
-                          $('#myEdit').click(function () {
-                              window.location.href = 'Edit.aspx?ID=' + ID;
-                          });
-                          $('#mytext').on('Click', '#MyLyricsUpload', function () {
-                              window.location.href = 'Edit.aspx?ID=' + ID;
-                          });
+
+                      });
+                      $('#myEdit').click(function () {
+                          window.location.href = 'Edit.aspx?ID=' + ID;
+                      });
+                      $('#mytext').on('Click', '#MyLyricsUpload', function () {
+                          window.location.href = 'Edit.aspx?ID=' + ID;
+                      });
                   }
                   else {
                   }
@@ -677,7 +749,7 @@
     });
 
 
-    
+
     //***********************************************************************************************************************************************************
 </script>
 
