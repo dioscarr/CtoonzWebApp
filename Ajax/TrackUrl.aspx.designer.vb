@@ -11,14 +11,14 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class WebForm9
+Partial Public Class WebForm5
 
     '''<summary>
-    '''path control.
+    '''TrackUrl control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents path As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents TrackUrl As Global.System.Web.UI.WebControls.Label
 End Class
