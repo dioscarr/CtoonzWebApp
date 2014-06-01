@@ -107,23 +107,6 @@
             .auto-style3 {
                 width: 95px;
             }
-            .auto-style4 {
-                height: 29px;
-            }
-            .auto-style5 {
-                width: 95px;
-                height: 29px;
-            }
-            .auto-style6 {
-                width: 81px;
-            }
-            .auto-style7 {
-                width: 158px;
-            }
-            .auto-style8 {
-                width: 158px;
-                height: 29px;
-            }
         </style>
 
 </asp:Content>
@@ -132,6 +115,11 @@
     <div id="rightsidebarparent" style="position:relative;"> 
         <div id="logoheads"></div>
         <div id="mylogo123"></div>
+        <div id="rightsidebar"><span id="mywelcome">Welcome !!!</span><br />
+            <span style="font-size:12px;">You are Loggeg in as Ctoonz</span>
+            <br />
+           <span style="font-size:12px;"> Date 2/17/2013</span>
+        </div>
    
 
 
@@ -169,8 +157,8 @@
 <td style="text-align:right;" class="auto-style1">Status</td>
 <td class="auto-style2"> <asp:TextBox ID="txtSSNum" runat="server" Width="96px"></asp:TextBox>
         </td>
-<td style="text-align:right;" class="auto-style6">Album Name:</td>
-<td class="auto-style7"> <asp:TextBox ID="txtAlbum" runat="server" Width="94px"></asp:TextBox>
+<td style="width:97px; text-align:right;">Album Name:</td>
+<td style="width:97px;"> <asp:TextBox ID="txtAlbum" runat="server" Width="94px"></asp:TextBox>
         </td>
 <td class="auto-style3"> 
             <asp:Button ID="btnAdd" runat="server" 
@@ -178,20 +166,18 @@
 
 
 </tr>
-    <tr>
-        <td colspan="4" class="auto-style4">
-             <asp:Label ID="fileoutput0" runat="server" Text="Select MP3 Track "></asp:Label>
-             <asp:FileUpload ID="FileUpload2" runat="server" Width="283px" />
-             <br />
+    <tr><td colspan="7">
+        <asp:FileUpload ID="FileUpload1" runat="server" Width="196px" />
+             <asp:Label ID="fileoutput" runat="server" Text="Label"></asp:Label>
         </td>
-        <td colspan="5"  class="auto-style8">
-             <br />
+        <td>
+             <asp:FileUpload ID="FileUpload2" runat="server" Width="151px" />
         </td>
-         <td class="auto-style5">
+         <td class="auto-style3">
             
     </tr>
 
-</table> 
+</table>
 
                 </div>
             </div>
@@ -290,64 +276,6 @@
 
 </div>
 
-
-
-
-
-
-
-
-
-<div id="jquery_jplayer_1" class="jp-jplayer"></div>
-
-<div id="jp_container_1" class="jp-audio">
-    <div class="jp-type-single">
-        <div class="jp-gui jp-interface">
-            <ul class="jp-controls">
-                
-                <!-- comment out any of the following <li>s to remove these buttons -->
-                
-                <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
-                <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
-                <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
-                <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
-                <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
-                <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
-            </ul>
-            
-            <!-- you can comment out any of the following <div>s too -->
-            
-            <div class="jp-progress">
-                <div class="jp-seek-bar">
-                    <div class="jp-play-bar"></div>
-                </div>
-            </div>
-            <div class="jp-volume-bar">
-                <div class="jp-volume-bar-value"></div>
-            </div>
-            <div class="jp-current-time"></div>
-            <div class="jp-duration"></div>                   
-        </div>
-        <div class="jp-details">
-            <ul>
-                <li><span class="jp-title"></span></li>
-            </ul>
-        </div>
-        <div class="jp-no-solution">
-            <span>Update Required</span>
-            To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
 <script type="text/javascript" src="Scripts/jwplayer.js"></script>
 
 
@@ -360,9 +288,6 @@
 
 
        
-
-
-
       
     <script src="Scripts/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>
     <script src="Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
@@ -468,14 +393,13 @@
                       var Status = $(this).find("td:nth-child(4) ").text();
                       var Album = $(this).find("td:nth-child(5) ").text();
                       //window.location.href = 'Edit.aspx?ID=' + ID; //+ '&Track=' + Track + '&Artist=' + Artist + '&Status=' + Status + '&Album=' + Album;
-                     
 
                       $('.product').remove();
-                      //Add 
                       $(this).closest('tr').after('<tr class="product" style="border:2px solid lightgrey; background:white;">' +
                           '<td class="myLyricsUrl" colspan="3" style="border:1px solid lightgrey;" ></td>' +
                             '<td colspan="2" id="myothercont" style="background:black;  height:500px;" " >' +
                                     '<button id="myEdit" >Edit</button>' +
+                                     '<button id="mySongUpload" >Upload Track</button>' +
                                     '<div id="myPlayer">' +
                                         '<div id="myElement">Loading the player...</div>' +
                                     '</div>' +
@@ -483,14 +407,9 @@
                             '<td id="mmm"> </td>' +
                           '</tr>');
                       var songpath = ""
-                      
+
                       $('.product .myLyricsUrl').load('Lyrics.aspx', { ID: ID }, function () {
                           $('.product ').hide();
-
-
-                          $('#mytext').css('color', 'red');
-                          $('#Lyrics').find('tbody tr').html('<button id="MyLyricsUpload" >Upload Lyrics</button>')
-                        
 
                           //Edit Button css
                           $('#myEdit').css("color", "#1E90FF");
@@ -500,23 +419,20 @@
                           $('#myEdit').css("left", "20px");
                           $('#myEdit').css("width", "126px");
                           $('#myEdit').css("height", "40px");
-                          //Upload Lyrics button css
-                          $('#MyLyricsUpload').css("color", "#1E90FF");
-                          $('#MyLyricsUpload').css("font-size", "16px");
-                          $('#MyLyricsUpload').css("position", "relative");
-                          $('#MyLyricsUpload').css("top", "0px");
-                          $('#MyLyricsUpload').css("left", "150px");
-                          $('#MyLyricsUpload').css("width", "126px");
-                          $('#MyLyricsUpload').css("height", "40px");
-                          
+
+                          $('#mySongUpload').css("color", "red");
+                          $('#mySongUpload').css("font-size", "16px");
+                          $('#mySongUpload').css("position", "relative");
+                          $('#mySongUpload').css("top", "-160px");
+                          $('#mySongUpload').css("left", "30px");
+                          $('#mySongUpload').css("width", "126px");
+                          $('#mySongUpload').css("height", "40px");
                           $('.product').fadeIn(2000);
-                          //Load the Player
-                          songpath <%= songsmanagement_aspx.song.TrackUrl(ID)%>;
+
                           $('#mmm').load('path.aspx #path', { ID: ID }, function () {
-                              //songpath = $('#path').html();
-                              alert(songpath);
+                              songpath = $('#path').html();
                               var substr = songpath.substring(songpath.indexOf('MP3'));
-                              
+
                               jwplayer("myElement").setup({
 
                                   file: substr,
@@ -531,22 +447,11 @@
                           });
                           $('#mmm').hide();
                       });
-
-                      //Upload Lyrics action URL
-                      $('#MyLyricsUpload').live('click', function () {
-                          window.location.href = 'Edit.aspx?ID=' + ID;
-                      });
-                      //Edit data action URL
                       $('#myEdit').click(function () {
                           window.location.href = 'Edit.aspx?ID=' + ID;
                       });
-
-
-
-
                   }
                   else {
-
                   }
               }, function () {
 
@@ -586,7 +491,6 @@
 
 
 
-           
 
 
             $('.listbox').css('background', 'green');
@@ -687,9 +591,8 @@
                       $('#myEdit').click(function () {
                           window.location.href = 'Edit.aspx?ID=' + ID;
                       });
-                      $('#mytext').on('Click', '#MyLyricsUpload', function () {
-                          window.location.href = 'Edit.aspx?ID=' + ID;
-                      });
+
+
                   }
                   else {
                   }

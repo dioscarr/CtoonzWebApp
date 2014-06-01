@@ -5,30 +5,18 @@
     Private objCustomerList As CustomerList
     Dim objrb As New RadioButtonList
     Dim path As String
-    Public Class song
-        Shared Function TrackUrl(ByRef ID As String) As String
-            Dim path As String = ""
-
-            Dim objcustomer As New Customer
-
-            If Not ID = "" Then
-                objcustomer.Load(ID)
-
-                path = objcustomer.TrackUrl.ToString
-            Else
-
-            End If
-
-            Return path
-        End Function
 
 
-    End Class
+
+
+
     Public songpath As String
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
             objCustomerList = New CustomerList
             objCustomer = New Customer
+
             Try
                 objCustomerList.Load()
                 Me.Session.Item("objCustomerList") = objCustomerList
@@ -38,16 +26,17 @@
                 lblMessage.Text = ex.Message
             Catch ex1 As Exception
                 lblMessage.Text = ex1.Message
+
             End Try
         Else
             Try
 
-           
-            lblMessage.Text = ""
-            objCustomer = New Customer
-            objCustomerList = New CustomerList
-            objCustomerList = Me.Session.Item("objCustomerList")
-            GridView1.DataSource = objCustomerList.ToArray
+
+                lblMessage.Text = ""
+                objCustomer = New Customer
+                objCustomerList = New CustomerList
+                objCustomerList = Me.Session.Item("objCustomerList")
+                GridView1.DataSource = objCustomerList.ToArray
                 GridView1.DataBind()
 
             Catch ex As Exception
@@ -64,7 +53,7 @@
                 objCustomerList = New CustomerList
             End If
 
-         
+
             If FileUpload2.HasFile = True Then
                 songpath = Server.MapPath("~/MP3/" + FileUpload2.FileName.ToString())
                 FileUpload2.SaveAs(songpath)
@@ -125,9 +114,9 @@
 
 
 
-   
 
-    
+
+
 
     Protected Sub Button1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnListAll.Click
 
@@ -150,7 +139,7 @@
 
 
 
-    
+
 
     Protected Sub rb2_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rb2.SelectedIndexChanged
 
@@ -223,5 +212,5 @@
 
     End Sub
 
-  
+
 End Class

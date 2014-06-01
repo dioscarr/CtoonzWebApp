@@ -1,30 +1,31 @@
 ﻿Imports System.Web.Services
 
+
 Public Class WebForm7
     Inherits System.Web.UI.Page
-
+    Dim objcustomer As New Customer
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+       
         Dim myString As String = Request.Form("ID")
 
-        Dim objcustomer As New Customer
+
 
 
 
         If Not myString = "" Then
-            objcustomer.Load(myString)
+            Try
+                objcustomer.Load(myString)
+                path.Text = objcustomer.TrackUrl
+            Catch ex As Exception
+                path.Text = ex.Message
+            End Try
 
-            path.Text = objcustomer.TrackUrl.ToString
+
         Else
 
         End If
 
     End Sub
-
-
-
-
-
-
 
 End Class
