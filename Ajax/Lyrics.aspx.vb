@@ -10,18 +10,19 @@ Public Class WebForm10
 
 
 
-        If Not path = "" Then
+        ' If Not path = "" Then
 
-            Dim sr As StreamReader = New StreamReader(objCustomer.LyricsUrl)
+        'Dim sr As StreamReader = New StreamReader(objCustomer.LyricsUrl)
 
-            Do While sr.Peek() >= 0
+        '  Do While sr.Peek() >= 0
 
-                myLyrics.Text += sr.ReadLine() + "<br/>"
-            Loop
-            sr.Close()
+        'myLyrics.Text += sr.ReadLine() + "<br/>"
+        myLyrics.Text = "yes this is working"
+        '  Loop
+        '  sr.Close()
 
 
-        End If
+        '  End If
     End Sub
 
 End Class
