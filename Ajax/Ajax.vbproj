@@ -144,9 +144,9 @@
     <Content Include="SongsManagement.aspx" />
     <Content Include="ServerResponse.aspx" />
     <Content Include="Edit.aspx" />
-    <Content Include="Lyrics.aspx" />
     <Content Include="PasteLyricspg.aspx" />
     <Content Include="path.aspx" />
+    <Content Include="Lyrics.aspx" />
     <Content Include="WebForm9.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -261,13 +261,6 @@
       <DependentUpon>Edit.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Lyrics.aspx.designer.vb">
-      <DependentUpon>Lyrics.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Lyrics.aspx.vb">
-      <DependentUpon>Lyrics.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="startpage.aspx.designer.vb">
       <DependentUpon>startpage.aspx</DependentUpon>
     </Compile>
@@ -294,6 +287,13 @@
     </Compile>
     <Compile Include="path.aspx.vb">
       <DependentUpon>path.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Lyrics.aspx.designer.vb">
+      <DependentUpon>Lyrics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lyrics.aspx.vb">
+      <DependentUpon>Lyrics.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="WebForm9.aspx.designer.vb">

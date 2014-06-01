@@ -11,14 +11,14 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class WebForm5
+Partial Public Class WebForm10
 
     '''<summary>
-    '''Mytext control.
+    '''myLyrics control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Mytext As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents myLyrics As Global.System.Web.UI.WebControls.Label
 End Class

@@ -1,21 +1,6 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Lyrics.aspx.vb" Inherits="Ajax.WebForm5" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-  <table id="Lyrics" width="580px"  border="0" style="color:black; font-size:11px; background:white; padding:40px; padding-left:50px;">
-    <tr>
-        <td>
-    <asp:Label ID="Mytext" runat="server" Text="mytext"></asp:Label>
-
-        </td>
-
-    </tr>
-
-  </table>
-</body>
-</html>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Lyrics.aspx.vb" Inherits="Ajax.WebForm10" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:Label runat="server" ID="myLyrics"></asp:Label>
+</asp:Content>
