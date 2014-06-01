@@ -407,11 +407,9 @@
                             '<td id="mmm"> </td>' +
                           '</tr>');
                       var songpath = ""
-
-                      $('.product .myLyricsUrl').load('Lyrics.aspx', { ID: ID }, function () {
-                          $('.product ').hide();
-
-                          //Edit Button css
+                      //Parameterized load page and select portion of ID = #MainContent_myLyrics
+                      $('.product .myLyricsUrl').load('Lyrics.aspx #MainContent_myLyrics', { ID: ID }, function () {
+                         
                           $('#myEdit').css("color", "#1E90FF");
                           $('#myEdit').css("font-size", "16px");
                           $('#myEdit').css("position", "relative");
@@ -428,7 +426,7 @@
                           $('#mySongUpload').css("width", "126px");
                           $('#mySongUpload').css("height", "40px");
                           $('.product').fadeIn(2000);
-
+                         
                           $('#mmm').load('path.aspx #path', { ID: ID }, function () {
                               songpath = $('#path').html();
                               var substr = songpath.substring(songpath.indexOf('MP3'));
@@ -447,6 +445,7 @@
                           });
                           $('#mmm').hide();
                       });
+                     
                       $('#myEdit').click(function () {
                           window.location.href = 'Edit.aspx?ID=' + ID;
                       });
@@ -459,7 +458,7 @@
                   $('#myPlayer').remove();
 
               });
-
+        
         //        $('#MainContent_GridView1 tr').addClass('formatting');
 
 
