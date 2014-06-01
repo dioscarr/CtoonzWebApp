@@ -123,7 +123,6 @@
     <Content Include="startpage.aspx" />
     <Content Include="Styles\jquery-ui.css" />
     <Content Include="Styles\Site.css" />
-    <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
@@ -137,10 +136,8 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Songs.aspx" />
     <Content Include="AddingSongs.aspx" />
     <Content Include="SongsManagement.aspx" />
-    <Content Include="ServerResponse.aspx" />
     <Content Include="Edit.aspx" />
     <Content Include="PasteLyricspg.aspx" />
     <Content Include="Lyrics.aspx" />
@@ -184,13 +181,6 @@
     </Compile>
     <Compile Include="BusinessBase.vb" />
     <Compile Include="Customer.vb" />
-    <Compile Include="Default.aspx.vb">
-      <SubType>ASPXCodeBehind</SubType>
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.designer.vb">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -223,13 +213,6 @@
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Songs.aspx.designer.vb">
-      <DependentUpon>Songs.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Songs.aspx.vb">
-      <DependentUpon>Songs.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="AddingSongs.aspx.designer.vb">
       <DependentUpon>AddingSongs.aspx</DependentUpon>
     </Compile>
@@ -242,13 +225,6 @@
     </Compile>
     <Compile Include="SongsManagement.aspx.vb">
       <DependentUpon>SongsManagement.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="ServerResponse.aspx.designer.vb">
-      <DependentUpon>ServerResponse.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ServerResponse.aspx.vb">
-      <DependentUpon>ServerResponse.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Edit.aspx.designer.vb">
