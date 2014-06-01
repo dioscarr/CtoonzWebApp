@@ -2,6 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" runat="server" contentplaceholderid="MainContent">
-    <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine" Height="527px" Width="786px"></asp:TextBox>
+            <asp:FileUpload ID="LyricscPdf" runat="server" Width="196px" />
+            <br />
+            <br />
+            <br />
+             <asp:Button ID="btnSubmit" runat="server" Text="Save" Width="185px" />
+
+             
 </asp:Content>
 

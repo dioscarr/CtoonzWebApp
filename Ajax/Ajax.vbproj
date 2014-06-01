@@ -285,10 +285,10 @@
     <Content Include="Site.Master" />
     <Content Include="skin\jPlayer_blue.monday_extd.psd" />
     <Content Include="skin\spirites_blue.monday_2011.psd" />
+    <Content Include="upfile\ctoonzpdf.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MP3\" />
-    <Folder Include="upfile\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

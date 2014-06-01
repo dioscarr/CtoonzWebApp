@@ -397,7 +397,7 @@
                       $('.product').remove();
                       $(this).closest('tr').after('<tr class="product" style="border:2px solid lightgrey; background:white;">' +
                           '<td class="myLyricsUrl" colspan="3" style="border:1px solid lightgrey;" ></td>' +
-                            '<td colspan="2" id="myothercont" style="background:black;  height:500px;" " >' +
+                            '<td colspan="2" id="myothercont" style="background:black;  height:610px;" " >' +
                                     '<button id="myEdit" >Edit</button>' +
                                      '<button id="mySongUpload" >Upload Track</button>' +
                                     '<div id="myPlayer">' +
@@ -409,7 +409,15 @@
                       var songpath = ""
                       //Parameterized load page and select portion of ID = #MainContent_myLyrics
                       $('.product .myLyricsUrl').load('Lyrics.aspx #MainContent_myLyrics', { ID: ID }, function () {
+                          var obj = $('#MainContent_myLyrics').html();
                          
+                      
+                          if (obj = 'uploadmylyrics') {
+                              $('#MainContent_myLyrics').html('<iframe id="iframemyuploadlyricspdf" style="Height:750px; width:580px;" src=""></iframe>').before('<button id="btnuploadmylyrics">Upload PDF version of the Lyrics</button>');
+                             // $('#MainContent_myLyrics').html('<button id="btnuploadmylyrics">Upload Lyrics</button>');
+
+                          };
+
                           $('#myEdit').css("color", "#1E90FF");
                           $('#myEdit').css("font-size", "16px");
                           $('#myEdit').css("position", "relative");
@@ -444,6 +452,10 @@
                               });
                           });
                           $('#mmm').hide();
+                      });
+
+                      $('#btnuploadmylyrics').live('click', function () {
+                          window.location.href = 'PasteLyricspg.aspx?ID=' + ID;
                       });
                      
                       $('#myEdit').click(function () {
@@ -502,13 +514,14 @@
     var prm = Sys.WebForms.PageRequestManager.getInstance();
 
     prm.add_endRequest(function () {
+        $("#MainContent_GridView1 tr").find("th").addClass('newcolor');
         $("#MainContent_GridView1 ").find("*").css("border", "none");
         $("#MainContent_GridView1 ").find("*").css("height", "40px");
         $("#MainContent_GridView1 ").find("td").css("border-bottom", "1px solid lightgrey");
+        $("#MainContent_GridView1 ").find("td").css("border-top", "1px solid lightgrey");
         $("#MainContent_GridView1 ").find("td").css("text-align", "center");
         $("#MainContent_GridView1 ").find("th").css("border-bottom", "1px solid lightgrey");
         $("#MainContent_GridView1 ").find("th").css("border-top", "1px solid lightgrey");
-
         //adding fix widths to the ths and tds
         $("#MainContent_GridView1 tr").find("th:nth-child(1) ").css("width", "50px");
         $("#MainContent_GridView1 tr").find("th:nth-child(2) ").css("width", "200x");
@@ -521,15 +534,38 @@
         $("#MainContent_GridView1 tr").find("td:nth-child(4) ").css("width", "150px");
         $("#MainContent_GridView1 tr").find("td:nth-child(5) ").css("width", "150px");
 
+        //var ID = $(this).find("td:nth-child(1) ").text();
+        // var Track = $(this).find("td:nth-child(2) ").text();
+        // var Artist = $(this).find("td:nth-child(3) ").text();
+        // var Status = $(this).find("td:nth-child(4) ").text();
+        // var Album = $(this).find("td:nth-child(5) ").text();
+
+        $('#btnFilter').hide();
+        $('#<%=txtFiltrerID.ClientID %>').hide();
+
+        $('#rb2bk').addClass('borderside');
+        // $('#searchheader').hide();
 
 
+
+
+        $('#<%=rb2.ClientID%>').click(function () {
+            var rb2value = $('#<%=rb2.ClientID%> input:checked').index();
+
+            if (rb2value != -1) {
+                var myval = $('#<%=rb2.ClientID%> input:checked').val();
+                $('#btnFilter').fadeIn("slow");
+                $('#<%=txtFiltrerID.ClientID %>').fadeIn("slow");
+            }
+
+        });
 
         var rows = $('#MainContent_GridView1').find('tbody tr').length;
         var no_rec_per_page = 15;
         var no_pages = Math.ceil(rows / no_rec_per_page);
         var $pagenumbers = $('<div id="pages"></div>');
         for (i = 0; i < no_pages; i++) {
-            $('<span id="#clickmetoo" class="paging">' + (i + 1) + '</span>').appendTo($pagenumbers);
+            $('<span id="clickme" class="paging">' + (i + 1) + '</span>').appendTo($pagenumbers);
         }
         $pagenumbers.insertBefore('#MainContent_GridView1');
         $('.paging').hover(function () {
@@ -539,6 +575,7 @@
         });
         $('#MainContent_GridView1').find('tbody tr').hide();
         var tr = $('#MainContent_GridView1 tbody tr');
+
         $('span').click(function (event) {
             $('#MainContent_GridView1').find('tbody tr').hide();
             for (var i = ($(this).text() - 1) * no_rec_per_page;
@@ -546,18 +583,7 @@
                 $(tr[i]).show();
             }
         });
-        //        function yes() {
-        //            $('#clickmetoo').trigger("click");
-        //        }
-        $('#clickmetoo').trigger("click"); // trigger click event on the span with ID clickmetoo
-
-
-
-        //        $("#btnFilter").click(function () {
-        //            yes();
-        //        });
-
-
+        $('#clickme').trigger("click"); // trigger click event on the span with ID clickme
 
         $('#MainContent_GridView1 tr').hover(function () {
             $(this).find('td').addClass('hover');
@@ -569,6 +595,7 @@
               }).toggle(function () {
 
                   var ID = $(this).find("th:nth-child(1) ").text();
+                  $(this).find('td').css("color", "black");
 
                   if (ID != "ID") {
 
@@ -580,28 +607,82 @@
                       //window.location.href = 'Edit.aspx?ID=' + ID; //+ '&Track=' + Track + '&Artist=' + Artist + '&Status=' + Status + '&Album=' + Album;
 
                       $('.product').remove();
-                      $(this).closest('tr').after('<tr class="product" style="border:1px solid black; background:white;"><td class="myLyricsUrl" colspan="3"  style=""></td><td colspan="2" style="border:none;"><button id="myEdit">Edit</button></td></tr>');
-                      $('.product .myLyricsUrl').load('Lyrics.aspx', { ID: ID }, function () {
+                      $(this).closest('tr').after('<tr class="product" style="border:2px solid lightgrey; background:white;">' +
+                          '<td class="myLyricsUrl" colspan="3" style="border:1px solid lightgrey;" ></td>' +
+                            '<td colspan="2" id="myothercont" style="background:black;  height:610px;" " >' +
+                                    '<button id="myEdit" >Edit</button>' +
+                                     '<button id="mySongUpload" >Upload Track</button>' +
+                                    '<div id="myPlayer">' +
+                                        '<div id="myElement">Loading the player...</div>' +
+                                    '</div>' +
+                            '</td>' +
+                            '<td id="mmm"> </td>' +
+                          '</tr>');
+                      var songpath = ""
+                      //Parameterized load page and select portion of ID = #MainContent_myLyrics
+                      $('.product .myLyricsUrl').load('Lyrics.aspx #MainContent_myLyrics', { ID: ID }, function () {
+                          var obj = $('#MainContent_myLyrics').html();
+                         
+                      
+                          if (obj = 'uploadmylyrics') {
+                              $('#MainContent_myLyrics').html('<iframe id="iframemyuploadlyricspdf" style="Height:750px; width:580px;" src=""></iframe>').before('<button id="btnuploadmylyrics">Upload PDF version of the Lyrics</button>');
+                              // $('#MainContent_myLyrics').html('<button id="btnuploadmylyrics">Upload Lyrics</button>');
 
-                          $('.product').hide();
+                          };
+
+                          $('#myEdit').css("color", "#1E90FF");
+                          $('#myEdit').css("font-size", "16px");
+                          $('#myEdit').css("position", "relative");
+                          $('#myEdit').css("top", "-160px");
+                          $('#myEdit').css("left", "20px");
+                          $('#myEdit').css("width", "126px");
+                          $('#myEdit').css("height", "40px");
+
+                          $('#mySongUpload').css("color", "red");
+                          $('#mySongUpload').css("font-size", "16px");
+                          $('#mySongUpload').css("position", "relative");
+                          $('#mySongUpload').css("top", "-160px");
+                          $('#mySongUpload').css("left", "30px");
+                          $('#mySongUpload').css("width", "126px");
+                          $('#mySongUpload').css("height", "40px");
                           $('.product').fadeIn(2000);
+                         
+                          $('#mmm').load('path.aspx #path', { ID: ID }, function () {
+                              songpath = $('#path').html();
+                              var substr = songpath.substring(songpath.indexOf('MP3'));
 
+                              jwplayer("myElement").setup({
+
+                                  file: substr,
+                                  image: "images/simplehead.png",
+                                  width: "280",
+                                  height: "100",
+                                  logo:
+                                           {
+                                               hide: 'true',
+                                           }
+                              });
+                          });
+                          $('#mmm').hide();
                       });
+
+                      $('#btnuploadmylyrics').live('click', function () {
+                          window.location.href = 'PasteLyricspg.aspx?ID=' + ID;
+                      });
+                     
                       $('#myEdit').click(function () {
                           window.location.href = 'Edit.aspx?ID=' + ID;
                       });
-
-
                   }
                   else {
                   }
-
               }, function () {
 
                   $('.product').remove();
+                  $('#myPlayer').remove();
+
               });
-
-
+        
         //        $('#MainContent_GridView1 tr').addClass('formatting');
 
 
@@ -621,18 +702,18 @@
                     $('.nameslist').html(html);
                     $('li').hover(function () {
                         $(this).addClass('hover');
-
                     }, function () {
                         $(this).removeClass('hover');
-
                     });
                     $('li').click(function () {
                         $('.userid').val($(this).text());
                         $('.listbox').hide();
-
                     });
                 }
             });
+
+
+
 
 
             $('.listbox').css('background', 'green');
@@ -641,6 +722,7 @@
             return false;
         });
     });
+   
 
 
 
