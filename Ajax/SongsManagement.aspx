@@ -439,7 +439,9 @@
                           else {
                               $('#MainContent_myLyrics').html("")
 
-                          };
+                            };
+ //Mp3 Player
+
 
                           $('#myEdit').css("color", "#1E90FF");
                           $('#myEdit').css("font-size", "16px");
@@ -458,23 +460,27 @@
                           $('#mySongUpload').css("height", "40px");
                           $('.product').fadeIn(2000);
                          
-                          $('#mmm').load('path.aspx #path', { ID: ID }, function () {
-                              songpath = $('#path').html();
-                              var substr = songpath.substring(songpath.indexOf('MP3'));
+                        
 
-                              jwplayer("myElement").setup({
 
-                                  file: substr,
-                                  image: "images/simplehead.png",
-                                  width: "280",
-                                  height: "100",
-                                  logo:
-                                           {
-                                               hide: 'true',
-                                           }
-                              });
-                          });
+
+
+
+
+
+
                           $('#mmm').hide();
+                      });
+
+
+                      $('#mySongUpload').live('click', function () {
+
+                          //window.location.href = 'TrackUrl.aspx?ID=' + ID;
+                          //$('#myElement').html('<audio controls>'+
+                          //                                       '<source src="horse.ogg" type="audio/ogg">'+
+                          //                                       '<source src="horse.mp3" type="audio/mpeg">'+
+                          //                       '</audio>');
+
                       });
 
                       $('#btnuploadmylyrics').live('click', function (e) {

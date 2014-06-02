@@ -14,11 +14,20 @@ Option Explicit On
 Partial Public Class WebForm5
 
     '''<summary>
-    '''TrackUrl control.
+    '''TrackMp3 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TrackUrl As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents TrackMp3 As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''btnSubmit control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnSubmit As Global.System.Web.UI.WebControls.Button
 End Class

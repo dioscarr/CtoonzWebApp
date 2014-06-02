@@ -12,14 +12,16 @@ Public Class WebForm8
 
     End Sub
 
+    
+
     <WebMethod()> Public Shared Function testmethod(ByVal name As String) As String
         Dim ID1 As String = name
-        
+
         Dim mysharedcus As New Customer
         Dim LyricsUrl As String
         mysharedcus.Load(ID1)
         LyricsUrl = mysharedcus.LyricsUrl
-   
+
         'LyricsUrl.Split("upfile")
 
         Return LyricsUrl
