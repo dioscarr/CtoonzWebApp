@@ -1,23 +1,63 @@
-﻿Public Class WebForm8
+﻿Imports System.Web.Services
+
+Public Class WebForm8
     Inherits System.Web.UI.Page
     Dim objCustomer As Customer
     Dim objCustomerList As CustomerList
+    Dim myID As String = ""
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim Lyricspath As String = ""
+
+        myID = Request.QueryString("ID")
+
+    End Sub
+
+    <WebMethod()> Public Shared Function testmethod(ByVal name As String) As String
+        Dim ID1 As String = name
+        
+        Dim mysharedcus As New Customer
+        Dim LyricsUrl As String
+        mysharedcus.Load(ID1)
+        LyricsUrl = mysharedcus.LyricsUrl
+   
+        'LyricsUrl.Split("upfile")
+
+        Return LyricsUrl
+    End Function
+
+    Protected Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
+
         objCustomer = New Customer
         If objCustomerList Is Nothing Then
             objCustomerList = New CustomerList
         End If
-        If LyricscPdf.HasFile = True Then
-            Lyricspath = Server.MapPath("~/upfile/" + LyricscPdf.FileName.ToString())
-            LyricscPdf.SaveAs(Lyricspath)
+
+        If Not myID = "" Then
+            'checking if Upload control has files attached
+            If LyricscPdf.HasFile = True Then
+
+                'Declare Variable(s)
+                Dim Lyricspath As String = ""
+                'Get ID values from request
+
+                'Object song created 
+
+                
+                Lyricspath = Server.MapPath(LyricscPdf.FileName.ToString())
+                LyricscPdf.SaveAs(Lyricspath)
+
+                objCustomer.Load(myID)
+
+                With objCustomer
+                    .LyricsUrl = LyricscPdf.FileName.Replace(" ", "%20")
+
+                End With
+                objCustomer.Save()
+            End If
+
         End If
-        objCustomer.Load(Request.Form("ID"))
-        With objCustomer
-            .LyricsUrl = Lyricspath.Replace(" ", "%20")
-        End With
-        objCustomer.Save()
+
+
         Response.Redirect("SongsManagement.aspx")
     End Sub
-
 End Class

@@ -409,12 +409,34 @@
                       var songpath = ""
                       //Parameterized load page and select portion of ID = #MainContent_myLyrics
                       $('.product .myLyricsUrl').load('Lyrics.aspx #MainContent_myLyrics', { ID: ID }, function () {
+
+
                           var obj = $('#MainContent_myLyrics').html();
-                         
-                      
-                          if (obj = 'uploadmylyrics') {
-                              $('#MainContent_myLyrics').html('<iframe id="iframemyuploadlyricspdf" style="Height:750px; width:580px;" src=""></iframe>').before('<button id="btnuploadmylyrics">Upload PDF version of the Lyrics</button>');
-                             // $('#MainContent_myLyrics').html('<button id="btnuploadmylyrics">Upload Lyrics</button>');
+                                                  
+                          if (obj == 'Ready') {
+                              alert('I am inside Ready ');
+                              var data = '';
+                              $.ajax({
+                                  type: "POST",
+                                  url: "PasteLyricspg.aspx/testmethod",
+                                  data: '{name: ' + ID + ' }',
+                                  contentType: "application/json; charset=utf-8",
+                                  dataType: "json",
+                                  success: function (html) {
+                                   $('#MainContent_myLyrics').html('<iframe id="iframemyuploadlyricspdf" style="Height:750px; width:580px;" src="upfile/' + html.d + '"></iframe>');
+                                  }
+                              });
+                          }
+         //Lyrics not yet uploaded
+         /**/                 if (obj == 'uploadmylyrics') {
+                              alert('I am inside uploadmylyrics ');
+
+                              $('#MainContent_myLyrics').html('<button id="btnuploadmylyrics">Upload PDF version of the Lyrics</button>');
+                             
+                                   }
+
+                          else {
+                              $('#MainContent_myLyrics').html("")
 
                           };
 
@@ -454,8 +476,14 @@
                           $('#mmm').hide();
                       });
 
-                      $('#btnuploadmylyrics').live('click', function () {
+                      $('#btnuploadmylyrics').live('click', function (e) {
+                          
                           window.location.href = 'PasteLyricspg.aspx?ID=' + ID;
+                         
+                         
+                     
+
+                          e.preventDefault();
                       });
                      
                       $('#myEdit').click(function () {

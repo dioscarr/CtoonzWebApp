@@ -7,22 +7,26 @@ Public Class WebForm10
         Dim objCustomer As New Customer
         objCustomer.Load(Request.Form("ID"))
         Dim path As String = objCustomer.LyricsUrl
-
-
-
         If Not path = "" Then
-
-            Dim sr As StreamReader = New StreamReader(objCustomer.LyricsUrl)
-
-            Do While sr.Peek() >= 0
-
-                myLyrics.Text += sr.ReadLine() + "<br/>"
-                ' myLyrics.Text = "yes this is working"
-            Loop
-            sr.Close()
-
-
+            myLyrics.Text = "Ready"
+        Else
+            myLyrics.Text = "uploadmylyrics"
         End If
+
+
+        'If Not path = "" Then
+
+        '    Dim sr As StreamReader = New StreamReader(objCustomer.LyricsUrl)
+
+        '    Do While sr.Peek() >= 0
+
+        '        myLyrics.Text += sr.ReadLine() + "<br/>"
+        '        ' myLyrics.Text = "yes this is working"
+        '    Loop
+        '    sr.Close()
+
+
+        'End If
     End Sub
 
 End Class
