@@ -407,14 +407,14 @@
                             '<td id="mmm"> </td>' +
                           '</tr>');
                       var songpath = ""
-                      //Parameterized load page and select portion of ID = #MainContent_myLyrics
+//Parameterized load page and select portion of ID = #MainContent_myLyrics
                       $('.product .myLyricsUrl').load('Lyrics.aspx #MainContent_myLyrics', { ID: ID }, function () {
-
-
-                          var obj = $('#MainContent_myLyrics').html();
+                         
+//Lyrics  uploaded
+                           var obj = $('#MainContent_myLyrics').html();
                                                   
                           if (obj == 'Ready') {
-                              alert('I am inside Ready ');
+                              //alert('I am inside Ready ');
                               var data = '';
                               $.ajax({
                                   type: "POST",
@@ -427,13 +427,14 @@
                                   }
                               });
                           }
-         //Lyrics not yet uploaded
-         /**/                 if (obj == 'uploadmylyrics') {
-                              alert('I am inside uploadmylyrics ');
+//Lyrics not yet uploaded
+                            if (obj == 'uploadmylyrics')
+                            {
+                             // alert('I am inside uploadmylyrics ');
 
-                              $('#MainContent_myLyrics').html('<button id="btnuploadmylyrics">Upload PDF version of the Lyrics</button>');
+                                $('#MainContent_myLyrics').html('<button id="btnuploadmylyrics">Upload PDF version of the Lyrics</button>');
                              
-                                   }
+                            }
 
                           else {
                               $('#MainContent_myLyrics').html("")
