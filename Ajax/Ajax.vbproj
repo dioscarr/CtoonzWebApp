@@ -112,6 +112,7 @@
     <Content Include="js1\Jplayer.swf" />
     <Content Include="js1\jquery.jplayer.min.js" />
     <Content Include="js1\popcorn\popcorn.jplayer.js" />
+    <Content Include="MP3\loyal cover.mp3" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jwplayer.html5.js" />
@@ -287,9 +288,7 @@
     <Content Include="skin\spirites_blue.monday_2011.psd" />
     <Content Include="upfile\ctoonzpdf.pdf" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MP3\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

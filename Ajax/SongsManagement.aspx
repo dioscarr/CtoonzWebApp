@@ -392,7 +392,32 @@
                       var Artist = $(this).find("td:nth-child(3) ").text();
                       var Status = $(this).find("td:nth-child(4) ").text();
                       var Album = $(this).find("td:nth-child(5) ").text();
-                      //window.location.href = 'Edit.aspx?ID=' + ID; //+ '&Track=' + Track + '&Artist=' + Artist + '&Status=' + Status + '&Album=' + Album;
+                     
+                      var data = '';
+
+//(Audio Payer) Call to Webmethod that return the url of an mp3
+
+                      audioPayerUrl = "";
+                      $.ajax({
+                          type: "POST",
+                          url: "TrackUrl.aspx/WebMethodTrackUrl",
+                          data: '{name: ' + ID + ' }',
+                          contentType: "application/json; charset=utf-8",
+                          dataType: "json",
+                          success: function (html) {
+                              
+                              returnData(html.d);
+                              
+                          }
+                      });
+
+                      //function returnData(htmlReturn) {
+                      //   alert(htmlReturn);
+                      //    audioPayerUrl= htmlReturn
+                      //}
+                      //alert(audioPayerUrl);
+                      //alert($audioPayerUrl);
+//Content Boxes and divs for the content section 
 
                       $('.product').remove();
                       $(this).closest('tr').after('<tr class="product" style="border:2px solid lightgrey; background:white;">' +
@@ -401,13 +426,23 @@
                                     '<button id="myEdit" >Edit</button>' +
                                      '<button id="mySongUpload" >Upload Track</button>' +
                                     '<div id="myPlayer">' +
-                                        '<div id="myElement">Loading the player...</div>' +
+                                    
+                                                                                
                                     '</div>' +
+                                        
                             '</td>' +
                             '<td id="mmm"> </td>' +
                           '</tr>');
+                      function returnData(htmlReturn) { 
+                          audioPayerUrl = htmlReturn
+                          $('#myPlayer').html('<div id="myElement"><audio controls id="trackplayer"> <source src="MP3/' + audioPayerUrl + '" type="audio/mpeg"> </audio> </div>')
+                          //alert(htmlReturn);
+                      } 
+
                       var songpath = ""
+                     // alert(audioPayerUrl);
 //Parameterized load page and select portion of ID = #MainContent_myLyrics
+
                       $('.product .myLyricsUrl').load('Lyrics.aspx #MainContent_myLyrics', { ID: ID }, function () {
                          
 //Lyrics  uploaded
@@ -446,7 +481,7 @@
                           $('#myEdit').css("color", "#1E90FF");
                           $('#myEdit').css("font-size", "16px");
                           $('#myEdit').css("position", "relative");
-                          $('#myEdit').css("top", "-160px");
+                          $('#myEdit').css("top", "-330px");
                           $('#myEdit').css("left", "20px");
                           $('#myEdit').css("width", "126px");
                           $('#myEdit').css("height", "40px");
@@ -454,12 +489,15 @@
                           $('#mySongUpload').css("color", "red");
                           $('#mySongUpload').css("font-size", "16px");
                           $('#mySongUpload').css("position", "relative");
-                          $('#mySongUpload').css("top", "-160px");
+                          $('#mySongUpload').css("top", "-330px");
                           $('#mySongUpload').css("left", "30px");
                           $('#mySongUpload').css("width", "126px");
                           $('#mySongUpload').css("height", "40px");
                           $('.product').fadeIn(2000);
-                         
+
+                          $('#myPlayer').css("position", "relative");
+                          $('#myPlayer').css("top", "-300px");
+                          $('#myPlayer').css("left", "0px");
                         
 
 
