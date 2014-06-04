@@ -167,12 +167,9 @@
 
 </tr>
     <tr><td colspan="7">
-        <asp:FileUpload ID="FileUpload1" runat="server" Width="196px" />
-             <asp:Label ID="fileoutput" runat="server" Text="Label"></asp:Label>
-        </td>
+        &nbsp;</td>
         <td>
-             <asp:FileUpload ID="FileUpload2" runat="server" Width="151px" />
-        </td>
+             &nbsp;</td>
          <td class="auto-style3">
             
     </tr>
@@ -392,10 +389,10 @@
                       var Artist = $(this).find("td:nth-child(3) ").text();
                       var Status = $(this).find("td:nth-child(4) ").text();
                       var Album = $(this).find("td:nth-child(5) ").text();
-                     
+
                       var data = '';
 
-//(Audio Payer) Call to Webmethod that return the url of an mp3
+                      //(Audio Payer) Call to Webmethod that return the url of an mp3
 
                       audioPayerUrl = "";
                       $.ajax({
@@ -405,9 +402,9 @@
                           contentType: "application/json; charset=utf-8",
                           dataType: "json",
                           success: function (html) {
-                              
+
                               returnData(html.d);
-                              
+
                           }
                       });
 
@@ -417,37 +414,38 @@
                       //}
                       //alert(audioPayerUrl);
                       //alert($audioPayerUrl);
-//Content Boxes and divs for the content section 
+                      //Content Boxes and divs for the content section 
 
                       $('.product').remove();
-                      $(this).closest('tr').after('<tr class="product" style="border:2px solid lightgrey; background:white;">' +
+                      $(this).closest('tr').after('<tr class="product" style="border:2px solid lightgrey; height:750px; background:white;">' +
                           '<td class="myLyricsUrl" colspan="3" style="border:1px solid lightgrey;" ></td>' +
                             '<td colspan="2" id="myothercont" style="background:black;  height:610px;" " >' +
                                     '<button id="myEdit" >Edit</button>' +
                                      '<button id="mySongUpload" >Upload Track</button>' +
                                     '<div id="myPlayer">' +
-                                    
-                                                                                
+
+
                                     '</div>' +
-                                        
+
                             '</td>' +
                             '<td id="mmm"> </td>' +
                           '</tr>');
-                      function returnData(htmlReturn) { 
+                      function returnData(htmlReturn) {
                           audioPayerUrl = htmlReturn
-                          $('#myPlayer').html('<div id="myElement"><audio controls id="trackplayer"> <source src="MP3/' + audioPayerUrl + '" type="audio/mpeg"> </audio> </div>')
-                          //alert(htmlReturn);
-                      } 
+
+                          $('#myPlayer').html('<div id="myElement"><audio controls id="trackplayer"> <source src="/MP3/' + audioPayerUrl + '" type="audio/mpeg"> </audio> </div>')
+
+                      }
 
                       var songpath = ""
-                     // alert(audioPayerUrl);
-//Parameterized load page and select portion of ID = #MainContent_myLyrics
+                      // alert(audioPayerUrl);
+                      //Parameterized load page and select portion of ID = #MainContent_myLyrics
 
                       $('.product .myLyricsUrl').load('Lyrics.aspx #MainContent_myLyrics', { ID: ID }, function () {
-                         
-//Lyrics  uploaded
-                           var obj = $('#MainContent_myLyrics').html();
-                                                  
+
+                          //Lyrics  uploaded
+                          var obj = $('#MainContent_myLyrics').html();
+
                           if (obj == 'Ready') {
                               //alert('I am inside Ready ');
                               var data = '';
@@ -458,24 +456,23 @@
                                   contentType: "application/json; charset=utf-8",
                                   dataType: "json",
                                   success: function (html) {
-                                   $('#MainContent_myLyrics').html('<iframe id="iframemyuploadlyricspdf" style="Height:750px; width:580px;" src="upfile/' + html.d + '"></iframe>');
+                                      $('#MainContent_myLyrics').html('<iframe id="iframemyuploadlyricspdf" style="Height:750px; width:580px;" src="/upfile/' + html.d + '"></iframe>');
                                   }
                               });
                           }
-//Lyrics not yet uploaded
-                            if (obj == 'uploadmylyrics')
-                            {
-                             // alert('I am inside uploadmylyrics ');
+                          //Lyrics not yet uploaded
+                          if (obj == 'uploadmylyrics') {
+                              // alert('I am inside uploadmylyrics ');
 
-                                $('#MainContent_myLyrics').html('<button id="btnuploadmylyrics">Upload PDF version of the Lyrics</button>');
-                             
-                            }
+                              $('#MainContent_myLyrics').html('<button id="btnuploadmylyrics">Upload PDF version of the Lyrics</button>');
+
+                          }
 
                           else {
                               $('#MainContent_myLyrics').html("")
 
-                            };
- //Mp3 Player
+                          };
+                          //Mp3 Player
 
 
                           $('#myEdit').css("color", "#1E90FF");
@@ -498,7 +495,7 @@
                           $('#myPlayer').css("position", "relative");
                           $('#myPlayer').css("top", "-300px");
                           $('#myPlayer').css("left", "0px");
-                        
+
 
 
 
@@ -513,24 +510,21 @@
 
                       $('#mySongUpload').live('click', function () {
 
-                          //window.location.href = 'TrackUrl.aspx?ID=' + ID;
-                          //$('#myElement').html('<audio controls>'+
-                          //                                       '<source src="horse.ogg" type="audio/ogg">'+
-                          //                                       '<source src="horse.mp3" type="audio/mpeg">'+
-                          //                       '</audio>');
+                          window.location.href = 'TrackUrl.aspx?ID=' + ID;
+
 
                       });
 
                       $('#btnuploadmylyrics').live('click', function (e) {
-                          
+
                           window.location.href = 'PasteLyricspg.aspx?ID=' + ID;
-                         
-                         
-                     
+
+
+
 
                           e.preventDefault();
                       });
-                     
+
                       $('#myEdit').click(function () {
                           window.location.href = 'Edit.aspx?ID=' + ID;
                       });
@@ -543,7 +537,7 @@
                   $('#myPlayer').remove();
 
               });
-        
+
         //        $('#MainContent_GridView1 tr').addClass('formatting');
 
 
@@ -682,7 +676,7 @@
                       $('.product').remove();
                       $(this).closest('tr').after('<tr class="product" style="border:2px solid lightgrey; background:white;">' +
                           '<td class="myLyricsUrl" colspan="3" style="border:1px solid lightgrey;" ></td>' +
-                            '<td colspan="2" id="myothercont" style="background:black;  height:610px;" " >' +
+                            '<td colspan="2" id="myothercont" style="background:black;  height:950px;" " >' +
                                     '<button id="myEdit" >Edit</button>' +
                                      '<button id="mySongUpload" >Upload Track</button>' +
                                     '<div id="myPlayer">' +
@@ -695,8 +689,8 @@
                       //Parameterized load page and select portion of ID = #MainContent_myLyrics
                       $('.product .myLyricsUrl').load('Lyrics.aspx #MainContent_myLyrics', { ID: ID }, function () {
                           var obj = $('#MainContent_myLyrics').html();
-                         
-                      
+
+
                           if (obj = 'uploadmylyrics') {
                               $('#MainContent_myLyrics').html('<iframe id="iframemyuploadlyricspdf" style="Height:750px; width:580px;" src=""></iframe>').before('<button id="btnuploadmylyrics">Upload PDF version of the Lyrics</button>');
                               // $('#MainContent_myLyrics').html('<button id="btnuploadmylyrics">Upload Lyrics</button>');
@@ -705,7 +699,7 @@
 
                           $('#myEdit').css("color", "#1E90FF");
                           $('#myEdit').css("font-size", "16px");
-                          $('#myEdit').css("position", "relative");
+                          $('#myEdit').css("position", "absolute");
                           $('#myEdit').css("top", "-160px");
                           $('#myEdit').css("left", "20px");
                           $('#myEdit').css("width", "126px");
@@ -719,30 +713,15 @@
                           $('#mySongUpload').css("width", "126px");
                           $('#mySongUpload').css("height", "40px");
                           $('.product').fadeIn(2000);
-                         
-                          $('#mmm').load('path.aspx #path', { ID: ID }, function () {
-                              songpath = $('#path').html();
-                              var substr = songpath.substring(songpath.indexOf('MP3'));
 
-                              jwplayer("myElement").setup({
 
-                                  file: substr,
-                                  image: "images/simplehead.png",
-                                  width: "280",
-                                  height: "100",
-                                  logo:
-                                           {
-                                               hide: 'true',
-                                           }
-                              });
-                          });
                           $('#mmm').hide();
                       });
 
                       $('#btnuploadmylyrics').live('click', function () {
                           window.location.href = 'PasteLyricspg.aspx?ID=' + ID;
                       });
-                     
+
                       $('#myEdit').click(function () {
                           window.location.href = 'Edit.aspx?ID=' + ID;
                       });
@@ -755,7 +734,7 @@
                   $('#myPlayer').remove();
 
               });
-        
+
         //        $('#MainContent_GridView1 tr').addClass('formatting');
 
 
@@ -795,7 +774,7 @@
             return false;
         });
     });
-   
+
 
 
 
