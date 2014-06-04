@@ -128,6 +128,7 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="TrackUrl.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -142,7 +143,6 @@
     <Content Include="Edit.aspx" />
     <Content Include="PasteLyricspg.aspx" />
     <Content Include="Lyrics.aspx" />
-    <Content Include="TrackUrl.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.designer.vb">
@@ -261,7 +261,7 @@
     </Compile>
     <Compile Include="TrackUrl.aspx.vb">
       <DependentUpon>TrackUrl.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

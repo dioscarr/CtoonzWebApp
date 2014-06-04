@@ -37,13 +37,17 @@ Public Class WebForm5
                 'Object song created 
 
 
-                Trackpath = Server.MapPath(TrackMp3.FileName.ToString())
+                Trackpath = Server.MapPath("~/MP3/" + TrackMp3.FileName.ToString())
                 TrackMp3.SaveAs(Trackpath)
 
                 objCustomer.Load(myID)
 
                 With objCustomer
-                    .TrackUrl = TrackMp3.FileName.Replace(" ", "%20")
+                    Dim replacedstring As String = ""
+
+                    replacedstring = TrackMp3.FileName.Replace(" ", "%20")
+
+                    .TrackUrl = replacedstring
 
                 End With
                 objCustomer.Save()
