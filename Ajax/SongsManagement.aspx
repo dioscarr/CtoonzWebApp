@@ -115,11 +115,6 @@
     <div id="rightsidebarparent" style="position:relative;"> 
         <div id="logoheads"></div>
         <div id="mylogo123"></div>
-        <div id="rightsidebar"><span id="mywelcome">Welcome !!!</span><br />
-            <span style="font-size:12px;">You are Loggeg in as Ctoonz</span>
-            <br />
-           <span style="font-size:12px;"> Date 2/17/2013</span>
-        </div>
    
 
 

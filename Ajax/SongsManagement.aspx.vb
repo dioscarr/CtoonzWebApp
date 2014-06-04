@@ -45,8 +45,7 @@
         End If
     End Sub
     Protected Sub btnAdd_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnAdd.Click
-        path = ""
-        songpath = ""
+       
         Try
             objCustomer = New Customer
             If objCustomerList Is Nothing Then
@@ -54,12 +53,7 @@
             End If
 
 
-            If FileUpload2.HasFile = True Then
-                songpath = Server.MapPath("~/MP3/" + FileUpload2.FileName.ToString())
-                FileUpload2.SaveAs(songpath)
-
-
-            End If
+          
 
             With objCustomer
 
@@ -67,8 +61,7 @@
                 .Artist = txtLname.Text
                 .Status = txtSSNum.Text
                 .Album = txtAlbum.Text
-                .LyricsUrl = path
-                .TrackUrl = songpath.Replace(" ", "%20")
+                
             End With
             objCustomer.Save()
 
