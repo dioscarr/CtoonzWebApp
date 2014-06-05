@@ -5,323 +5,37 @@
     <link href="Styles/jquery-ui.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
    
-    <style type="text/css">
-        .style8
-        {
-            width: 128px;
-            height: 80px;
-        }
-        .style13
-        {
-            width: 313px;
-        }
-        .style14
-        {
-            width: 18px;
-            height: 80px;
-        }
-        .style16
-        {
-            width: 17px;
-            height: 80px;
-        }
-        .style17
-        {
-            width: 148px;
-            height: 80px;
-        }
-        </style>
+    <script type="text/javascript">
+        //***********************************************************************************************************************************************************
 
-        <style type="text/css">
-          
-            .listbox
-    {
-       
-        position:absolute;
-        z-index:2;
-        top:50px;
-       
-       
-        
-        margin-top:95px;
-        width: 200px;
-        background-color: transparent;
-        color: black;
-        list-style:none;      
-            }
-    .nameslist
-    {
-        position:relative;
-      
-        z-index:3;
-        margin: 0px;
-        padding: 0px;
-        list-style: none;
+
+        $(document).ready(function () {
+
+
+
+            $("#MainContent_GridView1 tr").find("th").addClass('newcolor');
+            $("#MainContent_GridView1 ").find("*").css("border", "none");
+            $("#MainContent_GridView1 ").find("*").css("height", "40px");
+            $("#MainContent_GridView1 ").find("td").css("border-bottom", "1px solid lightgrey");
+            $("#MainContent_GridView1 ").find("td").css("border-top", "1px solid lightgrey");
+            $("#MainContent_GridView1 ").find("td").css("text-align", "center");
+            $("#MainContent_GridView1 ").find("th").css("border-bottom", "1px solid lightgrey");
+            $("#MainContent_GridView1 ").find("th").css("border-top", "1px solid lightgrey");
+            //adding fix widths to the ths and tds
+            $("#MainContent_GridView1 tr").find("th:nth-child(1) ").addClass("myID");
+            $("#MainContent_GridView1 tr").find("th:nth-child(2) ").css("myTrack");
+            $("#MainContent_GridView1 tr").find("th:nth-child(3) ").css("width", "300x");
+            $("#MainContent_GridView1 tr").find("th:nth-child(4) ").css("width", "150px");
+            $("#MainContent_GridView1 tr").find("th:nth-child(5) ").css("width", "150px");
+            $("#MainContent_GridView1 tr").find("td:nth-child(1) ").css("width", "51px");
+            $("#MainContent_GridView1 tr").find("td:nth-child(2) ").css("width", "227px");
+            $("#MainContent_GridView1 tr").find("td:nth-child(3) ").css("width", "300px");
+            $("#MainContent_GridView1 tr").find("td:nth-child(4) ").css("width", "150px");
+            $("#MainContent_GridView1 tr").find("td:nth-child(5) ").css("width", "150px");
+
            
-    }
-    .hover
-    {
-        background-color: #BCF5A9;
-        color: blue;
-    }
-            .userid
-            {
-                width: 191px;
-            }
-                        
-            
-            .hover { background-color: #01ADED; color: Black; font:bold; } 
-            
-            .tblWoBorder{
-        border:none;
-        height:50px;
-    }
-            .style18
-            {
-                height: 80px;
-            }
-            
-            
-            .hoverpaging
-            {
-                background:#00f; color:#fff;
-                }
-             .paging
-             {
-                 margin:5px;
-                 }
-                 
-                 
-                 .borderside
-                 {
-                      border-left:1px solid lightgrey;      
-                      border-right:1px solid lightgrey;
-                     
-                     }
-            .auto-style1 {
-                width: 63px;
-            }
-            .auto-style2 {
-                width: 59px;
-            }
-            .auto-style3 {
-                width: 95px;
-            }
-        </style>
-
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <div id="rightsidebarparent" style="position:relative;"> 
-        <div id="logoheads"></div>
-        <div id="mylogo123"></div>
-   
-
-
-    </div>
-
-
-
-    <div class="displaylista">
-    <br />
-        <div>
-            <div style="margin-left:15px; ">
-
-
-<table style="width: 890px" border="0">
-
-<%--<tr style="height:30px;"><td colspan="7"></td><td colspan ="2">
-    <div id="MemoBody">
-        &nbsp;<div class="listbox">
-            <div class="nameslist">
-            </div>
-        </div>
-    </div>
-
-    </td></tr>
-<tr>--%>
-
-<td style="width:97px; text-align:right;">Track Name:</td>
-<td style="width:97px;"> 
-            <asp:TextBox ID="txtTrackName" runat="server" 
-                Width="96px"></asp:TextBox></td>
-<td style="text-align:right;" class="auto-style2">Artist:</td>
-<td style="width:97px;"> 
-    <asp:TextBox ID="txtLname" runat="server" 
-                Width="95px"></asp:TextBox></td>
-<td style="text-align:right;" class="auto-style1">Status</td>
-<td class="auto-style2"> <asp:TextBox ID="txtSSNum" runat="server" Width="96px"></asp:TextBox>
-        </td>
-<td style="width:97px; text-align:right;">Album Name:</td>
-<td style="width:97px;"> <asp:TextBox ID="txtAlbum" runat="server" Width="94px"></asp:TextBox>
-        </td>
-<td class="auto-style3"> 
-            <asp:Button ID="btnAdd" runat="server" 
-                Text="Add" Width="67px" /></td>
-
-
-</tr>
-    <tr><td colspan="7">
-        &nbsp;</td>
-        <td>
-             &nbsp;</td>
-         <td class="auto-style3">
-            
-    </tr>
-
-</table>
-
-                </div>
-            </div>
-
-
-
-    <div id="main_container">
-<div id="displaylisth">
-        <label id="lblDsplayinfo" >SONG INFORMATION</label>
-</div>
- 
-        
-    
-
-
-
-
-    <div class="displaylistb">
-    <br />
-        <div>
-            <div style="margin-left:15px; ">
-
-            <table border="0" style="margin-left: 10px; width: 879px; height: 50px;  ">
-                <tr class="">
-                    <td class="style8">
-                        <asp:Button ID="btnListAll" runat="server" Text="List All" Width="111px" Height="26px" />
-                    </td>
-                    <td class="style14">
-                        &nbsp;</td>
-                    <td class="style18" id="rb2bk">
-                        <asp:RadioButtonList ID="rb2" runat="server" RepeatColumns="4" Width="329px">
-                            <asp:ListItem Value="rbTrack">Track</asp:ListItem>
-                            <asp:ListItem Value="rbArtist">Artist</asp:ListItem>
-                            <asp:ListItem Value="rbStatus">Status</asp:ListItem>
-                        </asp:RadioButtonList>
-                    </td>
-                    <td class="style16">
-                    </td>
-                    <td class="style17">
-                         
-                        <br />
-                        <br />
-                        <asp:Button ID="btnFilter" runat="server" Text="Search" ClientIDMode="static" Width="66px" />
-                        <strong>&nbsp;<asp:TextBox ID="txtFiltrerID" runat="server" Width="61px"></asp:TextBox></strong>
-                    </td>
-                </tr>
-             
-               
-            </table>
-                <asp:ScriptManager ID="ScriptManager1" runat="server">
-                </asp:ScriptManager>
-            <asp:UpdatePanel ID="myupdatepanel" runat="server">
-            <ContentTemplate>
-                        <asp:GridView ID="GridView1" runat="server" class="whitecolor" AutoGenerateColumns="False" BorderStyle="None"
-                            Width="883px" PageSize="5">
-                            <RowStyle Height="25px" Font-Size="11px" BorderStyle="None"  />
-                           
-                            <SelectedRowStyle  />
-                            <Columns>
-                                <asp:BoundField DataField="ID" HeaderText="ID" HeaderStyle-BackColor=""></asp:BoundField>
-                                <asp:BoundField DataField="Track" HeaderText="Track" />
-                                <asp:BoundField DataField="Artist" HeaderText="Artist" />
-                                <asp:BoundField DataField="Status" HeaderText="Status" />
-                                <asp:BoundField DataField="Album" HeaderText="Album" />
-                                
-                            </Columns>
-                            <HeaderStyle   ForeColor="black" />
-                        </asp:GridView>
-                        </ContentTemplate>
-                        <Triggers >
-                      <%--<asp:AsyncPostBackTrigger ControlID="btnFilter"  EventName="click" />--%>
-                       <asp:AsyncPostBackTrigger ControlID="rb2" EventName="SelectedIndexChanged" />
-                         <%-- <asp:AsyncPostBackTrigger ControlID="btnListAll" EventName="Click" />--%>
-                         <%-- <asp:AsyncPostBackTrigger ControlID="btnAdd" EventName="Click" />--%>
-                        </Triggers>
-                        </asp:UpdatePanel>
-            <br />
-            
-        </div>
-        </div>
-    </div>
-    <table border="0" style="margin-left: 10px; width: 879px">
-     <tr>
-                    <td colspan="2">
-                    </td>
-                    <td align="center" class="style13">
-                        <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
-                    </td>
-                    <td colspan="2">
-                    </td>
-                </tr>
-    
-    </table>
-       
-        <script src="Scripts/jwplayer.js"></script>
-
-</div>
-
-<script type="text/javascript" src="Scripts/jwplayer.js"></script>
-
-
-       
-       
-
-<script type="text/javascript">
-    
-</script>
-
-
-       
-      
-    <script src="Scripts/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>
-    <script src="Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
-    <script src="Scripts/jquery-1.4.1.js" type="text/javascript"></script>
-    <script src="Scripts/jquery-ui.js" type="text/javascript"></script>
-    <link href="Styles/jquery-ui.css" rel="stylesheet" />
-<script type="text/javascript">
-    //***********************************************************************************************************************************************************
-
-
-    $(document).ready(function () {
-
-
-
-        $("#MainContent_GridView1 tr").find("th").addClass('newcolor');
-        $("#MainContent_GridView1 ").find("*").css("border", "none");
-        $("#MainContent_GridView1 ").find("*").css("height", "40px");
-        $("#MainContent_GridView1 ").find("td").css("border-bottom", "1px solid lightgrey");
-        $("#MainContent_GridView1 ").find("td").css("border-top", "1px solid lightgrey");
-        $("#MainContent_GridView1 ").find("td").css("text-align", "center");
-        $("#MainContent_GridView1 ").find("th").css("border-bottom", "1px solid lightgrey");
-        $("#MainContent_GridView1 ").find("th").css("border-top", "1px solid lightgrey");
-        //adding fix widths to the ths and tds
-        $("#MainContent_GridView1 tr").find("th:nth-child(1) ").css("width", "50px");
-        $("#MainContent_GridView1 tr").find("th:nth-child(2) ").css("width", "200x");
-        $("#MainContent_GridView1 tr").find("th:nth-child(3) ").css("width", "300x");
-        $("#MainContent_GridView1 tr").find("th:nth-child(4) ").css("width", "150px");
-        $("#MainContent_GridView1 tr").find("th:nth-child(5) ").css("width", "150px");
-        $("#MainContent_GridView1 tr").find("td:nth-child(1) ").css("width", "50px");
-        $("#MainContent_GridView1 tr").find("td:nth-child(2) ").css("width", "200px");
-        $("#MainContent_GridView1 tr").find("td:nth-child(3) ").css("width", "300px");
-        $("#MainContent_GridView1 tr").find("td:nth-child(4) ").css("width", "150px");
-        $("#MainContent_GridView1 tr").find("td:nth-child(5) ").css("width", "150px");
-
-        //var ID = $(this).find("td:nth-child(1) ").text();
-        // var Track = $(this).find("td:nth-child(2) ").text();
-        // var Artist = $(this).find("td:nth-child(3) ").text();
-        // var Status = $(this).find("td:nth-child(4) ").text();
-        // var Album = $(this).find("td:nth-child(5) ").text();
-
-        $('#btnFilter').hide();
-        $('#<%=txtFiltrerID.ClientID %>').hide();
+            $('#btnFilter').hide();
+            $('#<%=txtFiltrerID.ClientID %>').hide();
 
         $('#rb2bk').addClass('borderside');
         // $('#searchheader').hide();
@@ -399,28 +113,18 @@
                           success: function (html) {
 
                               returnData(html.d);
-
                           }
                       });
-
-                      //function returnData(htmlReturn) {
-                      //   alert(htmlReturn);
-                      //    audioPayerUrl= htmlReturn
-                      //}
-                      //alert(audioPayerUrl);
-                      //alert($audioPayerUrl);
-                      //Content Boxes and divs for the content section 
-
+                 
                       $('.product').remove();
-                      $(this).closest('tr').after('<tr class="product" style="border:2px solid lightgrey; height:750px; background:white;">' +
-                          '<td class="myLyricsUrl" colspan="3" style="border:1px solid lightgrey;" ></td>' +
-                            '<td colspan="2" id="myothercont" style="background:black;  height:610px;" " >' +
+                      $(this).closest('tr').after('<tr class="product">' +
+                          '<td class="myLyricsUrl" colspan="3"></td>' +
+                            '<td colspan="2" id="myothercont">' +
                                     '<button id="myEdit" >Edit</button>' +
-                                     '<button id="mySongUpload" >Upload Track</button>' +
+                                     '<button id="mySongUpload">Upload Track</button>' +
                                     '<div id="myPlayer">' +
-
-
-                                    '</div>' +
+                                    '</div >' +
+                                    '<div id="youtubevideo">  <iframe width="300" height="169" src="//www.youtube.com/embed/8gPOgDdYOJ8?rel=0" frameborder="0" allowfullscreen></iframe> </div>' +
 
                             '</td>' +
                             '<td id="mmm"> </td>' +
@@ -451,7 +155,7 @@
                                   contentType: "application/json; charset=utf-8",
                                   dataType: "json",
                                   success: function (html) {
-                                      $('#MainContent_myLyrics').html('<iframe id="iframemyuploadlyricspdf" style="Height:750px; width:580px;" src="/upfile/' + html.d + '"></iframe>');
+                                      $('#MainContent_myLyrics').html('<iframe id="iframemyuploadlyricspdf" style="Height:750px; width:570px;" src="/upfile/' + html.d + '"></iframe>');
                                   }
                               });
                           }
@@ -470,26 +174,10 @@
                           //Mp3 Player
 
 
-                          $('#myEdit').css("color", "#1E90FF");
-                          $('#myEdit').css("font-size", "16px");
-                          $('#myEdit').css("position", "relative");
-                          $('#myEdit').css("top", "-330px");
-                          $('#myEdit').css("left", "20px");
-                          $('#myEdit').css("width", "126px");
-                          $('#myEdit').css("height", "40px");
-
-                          $('#mySongUpload').css("color", "red");
-                          $('#mySongUpload').css("font-size", "16px");
-                          $('#mySongUpload').css("position", "relative");
-                          $('#mySongUpload').css("top", "-330px");
-                          $('#mySongUpload').css("left", "30px");
-                          $('#mySongUpload').css("width", "126px");
-                          $('#mySongUpload').css("height", "40px");
+                         
                           $('.product').fadeIn(2000);
 
-                          $('#myPlayer').css("position", "relative");
-                          $('#myPlayer').css("top", "-300px");
-                          $('#myPlayer').css("left", "0px");
+                        
 
 
 
@@ -775,6 +463,287 @@
 
     //***********************************************************************************************************************************************************
 </script>
+
+
+
+
+    <style type="text/css">
+        .style8
+        {
+            width: 128px;
+            height: 80px;
+        }
+        .style13
+        {
+            width: 313px;
+        }
+        .style14
+        {
+            width: 18px;
+            height: 80px;
+        }
+        .style16
+        {
+            width: 17px;
+            height: 80px;
+        }
+        .style17
+        {
+            width: 148px;
+            height: 80px;
+        }
+        </style>
+
+        <style type="text/css">
+          
+            .listbox
+    {
+       
+        position:absolute;
+        z-index:2;
+        top:50px;
+       
+       
+        
+        margin-top:95px;
+        width: 200px;
+        background-color: transparent;
+        color: black;
+        list-style:none;      
+            }
+    .nameslist
+    {
+        position:relative;
+      
+        z-index:3;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+           
+    }
+    .hover
+    {
+        background-color: #BCF5A9;
+        color: blue;
+    }
+            .userid
+            {
+                width: 191px;
+            }
+                        
+            
+            .hover { background-color: #01ADED; color: Black; font:bold; } 
+            
+            .tblWoBorder{
+        border:none;
+        height:50px;
+    }
+            .style18
+            {
+                height: 80px;
+            }
+            
+            
+            .hoverpaging
+            {
+                background:#00f; color:#fff;
+                }
+             .paging
+             {
+                 margin:5px;
+                 }
+                 
+                 
+                 .borderside
+                 {
+                      border-left:1px solid lightgrey;      
+                      border-right:1px solid lightgrey;
+                     
+                     }
+            .auto-style1 {
+                width: 63px;
+            }
+            .auto-style2 {
+                width: 59px;
+            }
+            .auto-style3 {
+                width: 95px;
+            }
+        </style>
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+    <div id="rightsidebarparent" style="position:relative;"> 
+        <div id="logoheads"></div>
+        <div id="mylogo123"></div>
+   
+
+
+    </div>
+
+
+
+    <div class="displaylista">
+    <br />
+        <div>
+            <div style="margin-left:15px; ">
+
+
+<table style="width: 890px" border="0">
+
+<%--<tr style="height:30px;"><td colspan="7"></td><td colspan ="2">
+    <div id="MemoBody">
+        &nbsp;<div class="listbox">
+            <div class="nameslist">
+            </div>
+        </div>
+    </div>
+
+    </td></tr>
+<tr>--%>
+
+<td style="width:97px; text-align:right;">Track Name:</td>
+<td style="width:97px;"> 
+            <asp:TextBox ID="txtTrackName" runat="server" 
+                Width="96px"></asp:TextBox></td>
+<td style="text-align:right;" class="auto-style2">Artist:</td>
+<td style="width:97px;"> 
+    <asp:TextBox ID="txtLname" runat="server" 
+                Width="95px"></asp:TextBox></td>
+<td style="text-align:right;" class="auto-style1">Status</td>
+<td class="auto-style2"> <asp:TextBox ID="txtSSNum" runat="server" Width="96px"></asp:TextBox>
+        </td>
+<td style="width:97px; text-align:right;">Album Name:</td>
+<td style="width:97px;"> <asp:TextBox ID="txtAlbum" runat="server" Width="94px"></asp:TextBox>
+        </td>
+<td class="auto-style3"> 
+            <asp:Button ID="btnAdd" runat="server" 
+                Text="Add" Width="67px" /></td>
+
+
+</tr>
+    <tr><td colspan="7">
+        &nbsp;</td>
+        <td>
+             &nbsp;</td>
+         <td class="auto-style3">
+            
+    </tr>
+
+</table>
+
+                </div>
+            </div>
+
+
+
+    <div id="main_container">
+<div id="displaylisth">
+        <label id="lblDsplayinfo" >SONG INFORMATION</label>
+</div>
+ 
+        
+    
+
+
+
+
+    <div class="displaylistb">
+    <br />
+        <div>
+            <div style="margin-left:15px; ">
+
+            <table border="0" style="margin-left: 10px; width: 879px; height: 50px;  ">
+                <tr class="">
+                    <td class="style8">
+                        <asp:Button ID="btnListAll" runat="server" Text="List All" Width="111px" Height="26px" />
+                    </td>
+                    <td class="style14">
+                        &nbsp;</td>
+                    <td class="style18" id="rb2bk">
+                        <asp:RadioButtonList ID="rb2" runat="server" RepeatColumns="4" Width="329px">
+                            <asp:ListItem Value="rbTrack">Track</asp:ListItem>
+                            <asp:ListItem Value="rbArtist">Artist</asp:ListItem>
+                            <asp:ListItem Value="rbStatus">Status</asp:ListItem>
+                        </asp:RadioButtonList>
+                    </td>
+                    <td class="style16">
+                    </td>
+                    <td class="style17">
+                         
+                        <br />
+                        <br />
+                        <asp:Button ID="btnFilter" runat="server" Text="Search" ClientIDMode="static" Width="66px" />
+                        <strong>&nbsp;<asp:TextBox ID="txtFiltrerID" runat="server" Width="61px"></asp:TextBox></strong>
+                    </td>
+                </tr>
+             
+               
+            </table>
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+            <asp:UpdatePanel ID="myupdatepanel" runat="server">
+            <ContentTemplate>
+                        <asp:GridView ID="GridView1" runat="server" class="whitecolor" AutoGenerateColumns="False" BorderStyle="None"
+                            Width="881px" PageSize="5">
+                            <RowStyle Width="883px" Height="25px" Font-Size="11px" BorderStyle="None"  />
+                           
+                            <SelectedRowStyle  />
+                            <Columns>
+                                <asp:BoundField DataField="ID" HeaderText="ID" HeaderStyle-BackColor=""></asp:BoundField>
+                                <asp:BoundField DataField="Track" HeaderText="Track" />
+                                <asp:BoundField DataField="Artist" HeaderText="Artist" />
+                                <asp:BoundField DataField="Status" HeaderText="Status" />
+                                <asp:BoundField DataField="Album" HeaderText="Album" />
+                                
+                            </Columns>
+                            <HeaderStyle   ForeColor="black" />
+                        </asp:GridView>
+                        </ContentTemplate>
+                        <Triggers >
+                      <%--<asp:AsyncPostBackTrigger ControlID="btnFilter"  EventName="click" />--%>
+                       <asp:AsyncPostBackTrigger ControlID="rb2" EventName="SelectedIndexChanged" />
+                         <%-- <asp:AsyncPostBackTrigger ControlID="btnListAll" EventName="Click" />--%>
+                         <%-- <asp:AsyncPostBackTrigger ControlID="btnAdd" EventName="Click" />--%>
+                        </Triggers>
+                        </asp:UpdatePanel>
+            <br />
+            
+        </div>
+        </div>
+    </div>
+    <table border="0" style="margin-left: 10px; width: 879px">
+     <tr>
+                    <td colspan="2">
+                    </td>
+                    <td align="center" class="style13">
+                        <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
+                    </td>
+                    <td colspan="2">
+                    </td>
+                </tr>
+    
+    </table>
+       
+        <script src="Scripts/jwplayer.js"></script>
+
+</div>
+
+<script type="text/javascript" src="Scripts/jwplayer.js"></script>
+
+
+       
+       
+
+<script type="text/javascript">
+    
+</script>
+
+
+       
+
+
 
   
 </asp:Content>

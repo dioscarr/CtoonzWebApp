@@ -660,3 +660,60 @@ div.accountInfo {
 
 }
 
+#myEdit {
+color:#1E90FF;
+font-size:16px;
+position:relative;
+top:-230px;
+left:20px;
+width:126px;
+height:40px;
+}
+
+#mySongUpload {
+
+    color:red;
+font-size:16px;
+position:relative;
+top:-230px;
+left:30px;
+width:126px;
+height:40px;
+}
+
+#myPlayer {
+    position:relative;
+top:-170px;
+left:0px;
+
+}
+#youtubevideo {
+position:relative;
+top:-100px;
+}
+
+.product {
+
+    border:2px solid lightgrey;
+     height:750px;
+      background:white;
+}
+.myLyricsUrl {
+    width:570px;
+    border:1px solid lightgrey;
+}
+#myothercont {
+    background:black;  
+    height:610px;
+
+}
+.myID {
+width:51px
+}
+.myTrack {
+width:227px;
+}                    
+                         
+                        
+                         
+
