@@ -645,9 +645,18 @@ div.accountInfo {
     background-repeat: no-repeat;
     z-index: 7;
 }
-#mywelcome {
-    
 
+.progressbar {
+    width:300px;
+    height:21px;
 }
 
+.progressbarlabel {
+     width:300px;
+    height:21px;
+    position:absolute;
+    text-align:center;
+    font-size:small;
+
+}
 

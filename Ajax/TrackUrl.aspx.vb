@@ -58,4 +58,21 @@ Public Class WebForm5
 
         Response.Redirect("SongsManagement.aspx")
     End Sub
+
+    Public Sub ProcessRequest(context As HttpContext)
+        Dim files As HttpFileCollection = context.Request.Files
+        For Each key As String In files
+            Dim file As HttpPostedFile = files(key)
+            Dim fileName As String = file.FileName
+            fileName = context.Server.MapPath("~/MP3/" & fileName)
+            file.SaveAs(fileName)
+        Next
+        context.Response.ContentType = "text/plain"
+        context.Response.Write("File(s) uploaded successfully!")
+    End Sub
+
+   
+    Protected Sub btn1_Click(sender As Object, e As EventArgs) Handles btn1.Click
+
+    End Sub
 End Class
