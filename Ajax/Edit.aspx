@@ -94,6 +94,24 @@
                         <td class="style6"></td>
                     </tr>
                     <tr>
+                        <td style="text-align: right" class="style2">Youtube Embed ID</td>
+                        <td class="style3"></td>
+                        <td class="style4">
+                            <asp:TextBox ID="txtYoutubeID" runat="server" Width="324px"></asp:TextBox>
+                        </td>
+                        <td class="style5"></td>
+                        <td class="style6"></td>
+                    </tr>
+                     <tr>
+                        <td style="text-align: right" class="style2">Upload Lyrics(<Span id="onlypdf" style="color:red;">only pdf</Span>)</td>
+                        <td class="style3"></td>
+                        <td class="style4">
+                              <asp:FileUpload ID="LyricscPdf" runat="server" Width="196px" />
+                        </td>
+                        <td class="style5"></td>
+                        <td class="style6"></td>
+                    </tr>
+                    <tr>
                         <td colspan="4"></td>
                         <td colspan="1">
                             </td>
@@ -113,7 +131,8 @@
 
 
                 </table>
-
+              
+            
 
             </div>
            

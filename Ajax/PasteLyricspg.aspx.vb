@@ -49,9 +49,10 @@ Public Class WebForm8
                 LyricscPdf.SaveAs(Lyricspath)
 
                 objCustomer.Load(myID)
-
+                Dim nospace As String = ""
+                nospace = LyricscPdf.FileName.Replace(" ", "%20")
                 With objCustomer
-                    .LyricsUrl = LyricscPdf.FileName.Replace(" ", "%20")
+                    .LyricsUrl = nospace
 
                 End With
                 objCustomer.Save()

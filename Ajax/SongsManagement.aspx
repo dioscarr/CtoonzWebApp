@@ -15,8 +15,8 @@
 
             $("#MainContent_GridView1 tr").find("th").addClass('newcolor');
             $("#MainContent_GridView1 ").find("*").css("border", "none");
-            $("#MainContent_GridView1 ").find("*").css("height", "40px");
-            $("#MainContent_GridView1 ").find("td").css("border-bottom", "1px solid lightgrey");
+            $("#MainContent_GridView1 ").find("*").css("height", "43px");
+            $("#MainContent_GridView1 ").find("td").css("border-bottom", "3px solid lightgrey");
             $("#MainContent_GridView1 ").find("td").css("border-top", "1px solid lightgrey");
             $("#MainContent_GridView1 ").find("td").css("text-align", "center");
             $("#MainContent_GridView1 ").find("th").css("border-bottom", "1px solid lightgrey");
@@ -115,6 +115,20 @@
                               returnData(html.d);
                           }
                       });
+
+                      $.ajax({
+                          type: "POST",
+                          url: "TrackUrl.aspx/WebMethodYoutubeId",
+                          data: '{name: ' + ID + ' }',
+                          contentType: "application/json; charset=utf-8",
+                          dataType: "json",
+                          success: function (html) {
+                              
+                
+                              YoutubeIDReturn(html.d);
+                          }
+                      });
+
                  
                       $('.product').remove();
                       $(this).closest('tr').after('<tr class="product">' +
@@ -124,11 +138,16 @@
                                      '<button id="mySongUpload">Upload Media</button>' +
                                     '<div id="myPlayer">' +
                                     '</div >' +
-                                    '<div id="youtubevideo">  <iframe width="300" height="169" src="//www.youtube.com/embed/8gPOgDdYOJ8?rel=0" frameborder="0" allowfullscreen></iframe> </div>' +
+                                    '<div id="youtubevideo">   </div>' +
 
                             '</td>' +
                             '<td id="mmm"> </td>' +
                           '</tr>');
+                      function YoutubeIDReturn(htmlreturn) {
+                         // alert(htmlreturn);
+                         $('#youtubevideo').html('<iframe width="300" height="169" src="//www.youtube.com/embed/'+htmlreturn+'" frameborder="0" allowfullscreen></iframe>')
+                      }
+
                       function returnData(htmlReturn) {
                           audioPayerUrl = htmlReturn
 
@@ -575,7 +594,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <div id="rightsidebarparent" style="position:relative;"> 
-        <div id="logoheads"></div>
+        <div id="logoheads">&nbsp;<br />
+        </div>
         <div id="mylogo123"></div>
    
 

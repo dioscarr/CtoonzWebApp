@@ -86,7 +86,7 @@ first child of the left and right table columns */
 .page {
     width: 910px;
     /*  background-color: #F2F2F2; */
-    margin: 90px auto 0px auto;
+    margin: 0px auto 0px auto;
     border: none;
     height: 500px;
 }
@@ -111,7 +111,7 @@ first child of the left and right table columns */
     .header h1 {
         font-weight: 700;
         margin: 0px;
-        padding: 0px 0px 0px 20px;
+        padding: 0px 0px 0px 0px;
         color: #f9f9f9;
         border: none;
         line-height: 2em;
@@ -638,7 +638,7 @@ top:18px;
 }
 
 
-#mylogo123 {
+/*#mylogo123 {
     position: absolute;
     left: -95px;
     top: -130px;
@@ -649,7 +649,7 @@ top:18px;
     background-position: top center;
     background-repeat: no-repeat;
     z-index: 7;
-}
+}*/
 
 .progressbar {
     width:300px;
@@ -731,7 +731,7 @@ background: rgb(255,255,255); /* Old browsers */
     background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
     width: 910px;
-    height: 400px;
+    height: 800px;
     top: 60px;
     position: relative;
     left: 0px;
@@ -758,7 +758,7 @@ background: rgb(255,255,255); /* Old browsers */
 #Delete_Edit_data {
 position:relative;
     left:300px;
-    top:150px;
+    top:110px;
     width:400px;
 }
 

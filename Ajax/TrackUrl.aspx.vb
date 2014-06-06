@@ -19,6 +19,15 @@ Public Class WebForm5
         myTrackUrl = mysharedcus.TrackUrl
         Return myTrackUrl
     End Function
+    <WebMethod()> Public Shared Function WebMethodYoutubeId(ByVal name As String) As String
+        Dim ID1 As String = name
+
+        Dim mysharedcus As New Customer
+        Dim YoutubeID As String
+        mysharedcus.Load(ID1)
+        YoutubeID = mysharedcus.YoutubeUrl
+        Return YoutubeID
+    End Function
 
     Protected Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         objcustomer = New Customer
@@ -27,6 +36,8 @@ Public Class WebForm5
         End If
 
         If Not myID = "" Then
+            objCustomer.Load(myID)
+
             'checking if Upload control has files attached
             If TrackMp3.HasFile = True Then
 
@@ -40,7 +51,7 @@ Public Class WebForm5
                 Trackpath = Server.MapPath("~/MP3/" + TrackMp3.FileName.ToString())
                 TrackMp3.SaveAs(Trackpath)
 
-                objCustomer.Load(myID)
+
 
                 With objCustomer
                     Dim replacedstring As String = ""
@@ -50,9 +61,16 @@ Public Class WebForm5
                     .TrackUrl = replacedstring
 
                 End With
-                objCustomer.Save()
+
+
+
             End If
 
+            If Not txtYoutbe.Text = "" Then
+                objCustomer.YoutubeUrl = txtYoutbe.Text
+            End If
+
+            objCustomer.Save()
         End If
 
 
@@ -62,4 +80,8 @@ Public Class WebForm5
    
 
    
+    
+    Protected Sub txtYoutbe_TextChanged(sender As Object, e As EventArgs) Handles txtYoutbe.TextChanged
+
+    End Sub
 End Class

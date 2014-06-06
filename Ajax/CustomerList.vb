@@ -30,7 +30,7 @@ Public Class CustomerList
     '********************************************************************************************************
     'Private Const strConn As String = "Data Source=HOME-VAIO\DRSQL;Initial Catalog=myssqldatabase;Integrated Security=True"
     ' Private Const strConn As String = "Data Source=mysqldtabase.mssql.somee.com;User ID=dioscarr_SQLLogin_1;Password=dmc10040"
-    Private Const strConn As String = " Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\ctoonz\Source\Repos\CtoonzWebApp\Ajax\App_Data\Songs.mdf;Integrated Security=True"
+    Private Const strConn As String = "Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\ctoonz\Source\Repos\CtoonzWebApp2\Ajax\App_Data\Songs.mdf;Integrated Security=True"
 #End Region
 
 #Region "Private Data Declaration"

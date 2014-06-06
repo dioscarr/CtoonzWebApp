@@ -191,7 +191,13 @@ Public MustInherit Class person
             Return _YoutubeUrl
         End Get
         Set(value As String)
-            _YoutubeUrl = value
+            If value = Nothing Then
+
+            Else
+                _YoutubeUrl = value
+
+            End If
+            MyBase.MarkDirty()
         End Set
     End Property
 

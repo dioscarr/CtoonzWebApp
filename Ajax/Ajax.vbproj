@@ -57,11 +57,36 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\packages\AjaxControlToolkit.7.1213\lib\40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxMin">
+      <HintPath>..\packages\AjaxMin.4.97.4951.28483\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData">
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage">
+      <HintPath>..\packages\WindowsAzure.Storage.2.1.0.4\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Services.Client" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Spatial">
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
@@ -106,6 +131,7 @@
     <Content Include="App_Data\Songs_log.ldf">
       <DependentUpon>Songs.mdf</DependentUpon>
     </Content>
+    <Content Include="images\bk1.jpg" />
     <Content Include="images\simplehead.png" />
     <Content Include="js1\add-on\jplayer.playlist.min.js" />
     <Content Include="js1\add-on\jquery.jplayer.inspector.js" />
@@ -116,8 +142,6 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.filestyle.js" />
-    <Content Include="Scripts\jwplayer.html5.js" />
-    <Content Include="Scripts\jwplayer.js" />
     <Content Include="skin\jplayer.blue.monday.css" />
     <Content Include="skin\jplayer.blue.monday.jpg" />
     <Content Include="skin\jplayer.blue.monday.seeking.gif" />
@@ -144,6 +168,7 @@
     <Content Include="Edit.aspx" />
     <Content Include="PasteLyricspg.aspx" />
     <Content Include="Lyrics.aspx" />
+    <Content Include="ControlPanel.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.designer.vb">
@@ -264,6 +289,13 @@
       <DependentUpon>TrackUrl.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="ControlPanel.aspx.designer.vb">
+      <DependentUpon>ControlPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel.aspx.vb">
+      <DependentUpon>ControlPanel.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -288,6 +320,7 @@
     <Content Include="skin\jPlayer_blue.monday_extd.psd" />
     <Content Include="skin\spirites_blue.monday_2011.psd" />
     <Content Include="upfile\ctoonzpdf.pdf" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

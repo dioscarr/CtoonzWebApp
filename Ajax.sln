@@ -6,11 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Ajax", "Ajax\Ajax.vbproj", "{6A656FE6-EDBF-47F4-B151-A86D509F64E9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{63F1CE27-B1B7-43BE-BAD4-C2928FE01FB7}"
-	ProjectSection(SolutionItems) = preProject
-		..\CtoonzWebApp\Ajax\TrackUrl.aspx = ..\CtoonzWebApp\Ajax\TrackUrl.aspx
-		..\CtoonzWebApp\Ajax\TrackUrl.aspx.designer.vb = ..\CtoonzWebApp\Ajax\TrackUrl.aspx.designer.vb
-		..\CtoonzWebApp\Ajax\TrackUrl.aspx.vb = ..\CtoonzWebApp\Ajax\TrackUrl.aspx.vb
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

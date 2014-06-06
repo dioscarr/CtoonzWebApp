@@ -20,9 +20,33 @@
                 .Artist = txtArtist.Text
                 .Status = txtStatus.Text
                 .Album = txtAlbum.Text
+                .YoutubeUrl = txtYoutubeID.Text
             End With
+           
+
+
+
+            'checking if Upload control has files attached
+            If LyricscPdf.HasFile = True Then
+
+                'Declare Variable(s)
+                Dim Lyricspath As String = ""
+
+                'Object song created 
+
+                Lyricspath = Server.MapPath(LyricscPdf.FileName.ToString())
+                LyricscPdf.SaveAs(Lyricspath)
+
+                Dim nospace As String = ""
+                nospace = LyricscPdf.FileName.Replace(" ", "%20")
+                With objCustomer
+                    .LyricsUrl = nospace
+                End With
+                
+            End If
             objCustomer.Save()
             Response.Redirect("SongsManagement.aspx")
+
         Catch objNSE As NotSupportedException
             lblMessage.Text = "Business Rule violation! " & objNSE.Message
         Catch objX As ArgumentNullException
@@ -37,6 +61,7 @@
             txtAlbum.Text = ""
             txtStatus.Text = ""
         End Try
+
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
@@ -48,6 +73,7 @@
             txtIDNumber.Text = objCustomer.ID
             txtStatus.Text = objCustomer.Status
             txtArtist.Text = objCustomer.Artist
+            txtYoutubeID.Text = objCustomer.YoutubeUrl
         Else
             objCustomer = Session.Item("objCustomer")
         End If
