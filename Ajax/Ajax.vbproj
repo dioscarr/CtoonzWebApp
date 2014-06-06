@@ -115,6 +115,7 @@
     <Content Include="MP3\loyal cover.mp3" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.filestyle.js" />
     <Content Include="Scripts\jwplayer.html5.js" />
     <Content Include="Scripts\jwplayer.js" />
     <Content Include="skin\jplayer.blue.monday.css" />

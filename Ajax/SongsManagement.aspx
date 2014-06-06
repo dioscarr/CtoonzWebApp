@@ -121,7 +121,7 @@
                           '<td class="myLyricsUrl" colspan="3"></td>' +
                             '<td colspan="2" id="myothercont">' +
                                     '<button id="myEdit" >Edit</button>' +
-                                     '<button id="mySongUpload">Upload Track</button>' +
+                                     '<button id="mySongUpload">Upload Media</button>' +
                                     '<div id="myPlayer">' +
                                     '</div >' +
                                     '<div id="youtubevideo">  <iframe width="300" height="169" src="//www.youtube.com/embed/8gPOgDdYOJ8?rel=0" frameborder="0" allowfullscreen></iframe> </div>' +
@@ -589,7 +589,7 @@
         <div>
             <div style="margin-left:15px; ">
 
-
+<div id="Adding_table_main_page_top">
 <table style="width: 890px" border="0">
 
 <%--<tr style="height:30px;"><td colspan="7"></td><td colspan ="2">
@@ -632,7 +632,7 @@
     </tr>
 
 </table>
-
+</div>
                 </div>
             </div>
 

@@ -42,80 +42,86 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
 
+    <div id="main_container">
+        <div id="Sub_main_container">
+            <h1 id="review_edit_text">Review and edit </h1>
+            <div id="Table_container">
+                <table id="EditTable" border="0" style="margin-left: 0px; width: 664px; height: 159px;">
+                    <tr>
+                        <td style="text-align: right" class="style7">&nbsp;</td>
+                        <td style="width: 18px; height: 26px"></td>
+                        <td class="style11">
+                            <asp:TextBox ID="txtIDNumber" runat="server"
+                                Width="324px"></asp:TextBox></td>
+                        <td style="width: 17px; height: 26px"></td>
+                        <td style="width: 148px; height: 26px">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right" class="style7">Track Name</td>
+                        <td style="width: 18px; height: 26px"></td>
+                        <td class="style11">
+                            <asp:TextBox ID="txtTrackName"  runat="server"
+                                Width="324px"></asp:TextBox></td>
+                        <td style="width: 17px; height: 26px"></td>
+                        <td style="width: 148px; height: 26px">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right" class="style7">Artist</td>
+                        <td style="width: 18px; height: 26px"></td>
+                        <td class="style11">
+                            <asp:TextBox ID="txtArtist" runat="server"
+                                Width="324px"></asp:TextBox></td>
+                        <td style="width: 17px; height: 26px"></td>
+                        <td style="width: 148px; height: 26px">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right" class="style2">Status</td>
+                        <td class="style3"></td>
+                        <td class="style4">
+                            <asp:TextBox ID="txtStatus" runat="server" Width="324px"></asp:TextBox>
+                        </td>
+                        <td class="style5"></td>
+                        <td class="style6">
+                           
+                    </tr>
+                    <tr>
+                        <td style="text-align: right" class="style2">Album Name</td>
+                        <td class="style3"></td>
+                        <td class="style4">
+                            <asp:TextBox ID="txtAlbum" runat="server" Width="324px"></asp:TextBox>
+                        </td>
+                        <td class="style5"></td>
+                        <td class="style6"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td colspan="1">
+                            </td>
 
-<table id="EditTable" border="0" style="margin-left:0px; width: 664px; height: 159px;" >
-<tr>
-        <td style="text-align: right" class="style7">ID:</td>
-        <td style="width: 18px; height: 26px">
-        </td>
-        <td class="style11"> 
-            <asp:TextBox ID="txtIDNumber" runat="server" 
-                Width="333px"></asp:TextBox></td>
-        <td style="width: 17px; height: 26px">
-        </td>
-        <td style="width: 148px; height: 26px"> 
-            &nbsp;</td>
-    </tr>
-    <tr>
-        <td style="text-align: right" class="style7"> Track Name</td>
-        <td style="width: 18px; height: 26px">
-        </td>
-        <td class="style11"> 
-            <asp:TextBox ID="txtTrackName" runat="server" 
-                Width="333px"></asp:TextBox></td>
-        <td style="width: 17px; height: 26px">
-        </td>
-        <td style="width: 148px; height: 26px"> 
-            &nbsp;</td>
-    </tr>
-    <tr>
-        <td style="text-align: right" class="style7"> Artist</td>
-        <td style="width: 18px; height: 26px">
-        </td>
-        <td class="style11"> <asp:TextBox ID="txtArtist" runat="server" 
-                Width="333px"></asp:TextBox></td>
-        <td style="width: 17px; height: 26px">
-        </td>
-        <td style="width: 148px; height: 26px"> &nbsp;</td>
-    </tr>
-    <tr>
-        <td style="text-align: right" class="style2"> Status</td>
-        <td class="style3">
-        </td>
-        <td class="style4"> <asp:TextBox ID="txtStatus" runat="server" Width="210px"></asp:TextBox>
-        </td>
-        <td class="style5">
-        </td>
-        <td class="style6"> <asp:Button ID="btnDelete" runat="server" Text="Delete By ID" 
-                Width="111px" /></td>
-    </tr>
-    <tr>
-        <td style="text-align: right" class="style2"> Album Name</td>
-        <td class="style3">
-        </td>
-        <td class="style4"> <asp:TextBox ID="txtAlbum" runat="server" Width="210px"></asp:TextBox>
-        </td>
-        <td class="style5">
-        </td>
-        <td class="style6"> </td>
-    </tr>
-    <tr>
-        <td colspan="4">
-        
-        </td>
-        <td colspan="1"> <asp:Button ID="btnSubmit" runat="server" Text="Save" Width="185px" /></td>
-  
-    </tr>
-    <tr><td>   
-    
-    
-    
-                        <asp:Label ID="lblMessage" runat="server" ForeColor="Red">ddfssdsds</asp:Label>
-    
-    
-    
-    </td></tr>
+                    </tr>
+                    <tr>
+                        <td>
 
-    </table>
 
+
+                            <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
+
+
+
+                        </td>
+                    </tr>
+
+
+                </table>
+
+
+            </div>
+           
+            <div id="Delete_Edit_data">
+                 <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="150px" Height="30px" />
+                 <asp:Button ID="btnApply"  runat="server" Text="Apply" Width="150px" Height="30px" />
+            
+            </div>
+        </div>
+    </div>
 </asp:Content>

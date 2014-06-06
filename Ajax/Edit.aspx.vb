@@ -13,7 +13,7 @@
             lblMessage.Text = objE.Message
         End Try
     End Sub
-    Protected Sub btnSubmit_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnSubmit.Click
+    Protected Sub btnSubmit_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnApply.Click
         Try
             With objCustomer
                 .Track = txtTrackName.Text
@@ -51,7 +51,7 @@
         Else
             objCustomer = Session.Item("objCustomer")
         End If
-       
+        txtIDNumber.Visible = False
     End Sub
 
     Protected Sub txtAlbum_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtAlbum.TextChanged

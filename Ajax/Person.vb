@@ -21,6 +21,7 @@ Public MustInherit Class person
     Private _Status As String
     Private _LyricsURL As String
     Private _TrackUrl As String
+    Private _YoutubeUrl As String
     '  Private _Age As Integer
     ' Private _Address As String
     ' Private _PhoneNumber As String
@@ -37,13 +38,14 @@ Public MustInherit Class person
         _Album = ""
         _LyricsURL = ""
         _TrackUrl = ""
+        _YoutubeURL = ""
 
         _Count = _Count + 1
 
     End Sub
     'Constructor with parameters
     Public Sub New(ByVal strArtist As String, ByVal strTrack As String, _
-                   ByVal strStstus As String, ByVal strAlbum As String, ByVal strLyricsUrl As String, ByVal strTrackUrl As String)
+                   ByVal strStstus As String, ByVal strAlbum As String, ByVal strLyricsUrl As String, ByVal strTrackUrl As String, ByVal strYoutubeUrl As String)
 
         Artist = strArtist
         Track = strTrack
@@ -51,6 +53,7 @@ Public MustInherit Class person
         Album = strAlbum
         LyricsUrl = strLyricsUrl
         TrackUrl = strTrackUrl
+        YotubeUrl = strYoutubeUrl
 
 
         _Count = _Count + 1
@@ -181,6 +184,18 @@ Public MustInherit Class person
 
         End Set
     End Property
+
+    Public Property YotubeUrl As String
+
+        Get
+            Return _YoutubeUrl
+        End Get
+        Set(value As String)
+            _YoutubeUrl = value
+        End Set
+    End Property
+
+
 
   
 

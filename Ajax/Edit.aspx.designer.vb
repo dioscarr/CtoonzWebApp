@@ -50,15 +50,6 @@ Partial Public Class WebForm6
     Protected WithEvents txtStatus As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''btnDelete control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnDelete As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''txtAlbum control.
     '''</summary>
     '''<remarks>
@@ -68,15 +59,6 @@ Partial Public Class WebForm6
     Protected WithEvents txtAlbum As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''btnSubmit control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnSubmit As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''lblMessage control.
     '''</summary>
     '''<remarks>
@@ -84,4 +66,22 @@ Partial Public Class WebForm6
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''btnApply control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnApply As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnDelete control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnDelete As Global.System.Web.UI.WebControls.Button
 End Class
