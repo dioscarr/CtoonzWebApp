@@ -186,6 +186,7 @@ Public Class Customer
                     Me.Album = CStr(objDR.Item(4)).Trim
                     Me.LyricsUrl = CStr(objDR.Item(5)).ToString.Trim
                     Me.TrackUrl = CStr(objDR.Item(6)).Trim
+                    Me.YoutubeUrl = CStr(objDR.Item(7)).Trim
                 Else
 
                     Me._ID = CStr(objDR.Item(0)).Trim
@@ -195,7 +196,7 @@ Public Class Customer
                     Me.Album = CStr(objDR.Item(4)).Trim
                     Me.LyricsUrl = CStr(objDR.Item(5)).Trim
                     Me.TrackUrl = CStr(objDR.Item(6)).Trim
-
+                    Me.YoutubeUrl = CStr(objDR.Item(7)).Trim
                 End If
 
             Else
@@ -231,7 +232,7 @@ Public Class Customer
             objConn.Open()
 
             Dim strSQL As String
-            strSQL = "UPDATE songs SET Track = @Track, Artist = @Artist, Status = @Status, Album = @Album, LyricsUrl = @LyricsUrl, TrackUrl = @TrackUrl where ID=@ID"
+            strSQL = "UPDATE songs SET Track = @Track, Artist = @Artist, Status = @Status, Album = @Album, LyricsUrl = @LyricsUrl, TrackUrl = @TrackUrl, YoutubeUrl = @YoutubeUrl where ID=@ID"
 
             'Dim objCmd As New OleDbCommand(strSQL, objConn)
             Dim objCmd As New SqlCommand(strSQL, objConn)
@@ -245,6 +246,7 @@ Public Class Customer
             objCmd.Parameters.Add("@Album", SqlDbType.VarChar).Value = Me.Album
             objCmd.Parameters.Add("@LyricsUrl", SqlDbType.VarChar).Value = Me.LyricsUrl
             objCmd.Parameters.Add("@TrackUrl", SqlDbType.VarChar).Value = Me.TrackUrl
+            objCmd.Parameters.Add("@YoutubeUrl", SqlDbType.VarChar).Value = Me.YoutubeUrl
 
 
 
@@ -284,7 +286,7 @@ Public Class Customer
             objConn.Open()
 
             Dim strSQL As String
-            strSQL = "INSERT INTO Songs (Track, Artist, Status, Album, LyricsUrl, TrackUrl) VALUES(@Track, @Artist, @Status, @Album, @LyricsUrl, @TrackUrl)"
+            strSQL = "INSERT INTO Songs (Track, Artist, Status, Album, LyricsUrl, TrackUrl, YoutubeUrl) VALUES(@Track, @Artist, @Status, @Album, @LyricsUrl, @TrackUrl, @YoutubeUrl)"
 
             'Dim objCmd As New OleDbCommand(strSQL, objConn)
             Dim objCmd As New SqlCommand(strSQL, objConn)
@@ -296,6 +298,7 @@ Public Class Customer
             objCmd.Parameters.Add("@Album", SqlDbType.VarChar).Value = Me.Album
             objCmd.Parameters.Add("@LyricsUrl", SqlDbType.VarChar).Value = Me.LyricsUrl
             objCmd.Parameters.Add("@TrackUrl", SqlDbType.VarChar).Value = Me.TrackUrl
+            objCmd.Parameters.Add("@YoutubeUrl", SqlDbType.VarChar).Value = Me.YoutubeUrl
 
             Dim intRecordsAffected As Integer = objCmd.ExecuteNonQuery()
             If intRecordsAffected <> 1 Then

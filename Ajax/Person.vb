@@ -53,7 +53,7 @@ Public MustInherit Class person
         Album = strAlbum
         LyricsUrl = strLyricsUrl
         TrackUrl = strTrackUrl
-        YotubeUrl = strYoutubeUrl
+        YoutubeUrl = strYoutubeUrl
 
 
         _Count = _Count + 1
@@ -185,7 +185,7 @@ Public MustInherit Class person
         End Set
     End Property
 
-    Public Property YotubeUrl As String
+    Public Property YoutubeUrl As String
 
         Get
             Return _YoutubeUrl
