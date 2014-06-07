@@ -104,8 +104,6 @@ first child of the left and right table columns */
     padding: 0px;
     width: 910px;
     background: #2E2E2E;
-
-  
 }
 
     .header h1 {
@@ -421,10 +419,10 @@ div.accountInfo {
     border-right: 0.5px solid #BDBDBD;
     border-bottom: 0.5px solid #BDBDBD;
 }
-#Adding_table_main_page_top {
-position:relative;
-top:18px;
 
+#Adding_table_main_page_top {
+    position: relative;
+    top: 18px;
 }
 
 #lblDsplayinfo {
@@ -652,77 +650,76 @@ top:18px;
 }*/
 
 .progressbar {
-    width:300px;
-    height:21px;
+    width: 300px;
+    height: 21px;
 }
 
 .progressbarlabel {
-     width:300px;
-    height:21px;
-    position:absolute;
-    text-align:center;
-    font-size:small;
-
+    width: 300px;
+    height: 21px;
+    position: absolute;
+    text-align: center;
+    font-size: small;
 }
 
 #myEdit {
-color:#1E90FF;
-font-size:16px;
-position:relative;
-top:-230px;
-left:20px;
-width:126px;
-height:40px;
+    color: #1E90FF;
+    font-size: 16px;
+    position: relative;
+    top: -230px;
+    left: 20px;
+    width: 126px;
+    height: 40px;
 }
 
 #mySongUpload {
-
-    color:red;
-font-size:16px;
-position:relative;
-top:-230px;
-left:30px;
-width:126px;
-height:40px;
+    color: red;
+    font-size: 16px;
+    position: relative;
+    top: -230px;
+    left: 30px;
+    width: 126px;
+    height: 40px;
 }
 
 #myPlayer {
-    position:relative;
-top:-170px;
-left:0px;
-
+    position: relative;
+    top: -170px;
+    left: 0px;
 }
+
 #youtubevideo {
-position:relative;
-top:-100px;
+    position: relative;
+    top: -100px;
 }
 
 .product {
-
-    border:2px solid lightgrey;
-     height:750px;
-      background:white;
+    border: 2px solid lightgrey;
+    height: 750px;
+    background: white;
 }
+
 .myLyricsUrl {
-    width:500px;
-    border:1px solid lightgrey;
+    width: 500px;
+    border: 1px solid lightgrey;
 }
-#myothercont {
-    background:black;  
-    height:610px;
-    width:304px;
 
+#myothercont {
+    background: black;
+    height: 610px;
+    width: 304px;
 }
+
 .myID {
-width:51px
+    width: 51px;
 }
+
 .myTrack {
-width:227px;
+    width: 227px;
 }
 
 #main_container {
-
-background: rgb(255,255,255); /* Old browsers */
+    background: rgb(255,255,255); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
@@ -741,54 +738,148 @@ background: rgb(255,255,255); /* Old browsers */
 }
 
 #Table_container {
-    position:relative;
-    left:130px;
-    top:50px;
+    position: relative;
+    left: 130px;
+    top: 50px;
 }
 
 #review_edit_text {
-    position:relative;
-    left:380px;
-    top:20px;
+    position: relative;
+    left: 380px;
+    top: 20px;
 }
 
 
 
 
 #Delete_Edit_data {
-position:relative;
-    left:300px;
-    top:110px;
-    width:400px;
+    position: relative;
+    left: 300px;
+    top: 110px;
+    width: 400px;
 }
 
 #FileUpload_container {
-
-position:relative;
-    left:0px;
-    top:50px;
+    position: relative;
+    left: 0px;
+    top: 50px;
 }
 
 .full-spectrum .sp-palette {
-max-width: 200px;
+    max-width: 200px;
 }
 
 .mywhite {
-
-background:black;
+    background: black;
 }
 
 .H_container {
-height:400px;
+    height: 480px;
+}
 
-
+.mybkColor {
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border-left: 0.5px solid #BDBDBD;
+    border-right: 0.5px solid #BDBDBD;
+    border-top: 0.5px solid #BDBDBD;
 }
 
 .myblue {
-
-background:blue;
+    background: blue;
 }
 
 .myOrage {
-background:orange;
+    background: orange;
 }
+
+.Mytitle-lg {
+    color: white;
+    font-size: 34px;
+}
+
+.Mytitle-md {
+    color: white;
+    font-size: 24px;
+}
+
+.circle1 {
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 500px;
+    border: 4px double #ccc;
+    font-size: 20px;
+    color: #666;
+    line-height: 200px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    background: #ddd;
+}
+
+    .circle1:hover {
+        border: 4px double #bbb;
+        color: #aaa;
+        text-decoration: none;
+        background: #e6e6e6;
+    }
+
+.circle2 {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 500px;
+    border: 4px double green;
+    font-size: 20px;
+    color: #666;
+    line-height: 150px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    background: #ddd;
+    z-index: 0;
+}
+
+    .circle2:hover {
+        border: 4px double #bbb;
+        color: #aaa;
+        text-decoration: none;
+        background: #e6e6e6;
+    }
+
+.RoundButtons {
+    font-size: 20px;
+    font-weight: bold;
+    height: 50px;
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 500px;
+}
+
+.highchart { display:none; }
+		.container
+		{
+			width:500px;
+			float:left;
+			margin: 30px;
+			padding:10px;
+			background-color:#eee;
+			-webkit-box-shadow: 0px 1px 15px rgba(50, 50, 50, 0.75);
+			-moz-box-shadow:    0px 1px 15px rgba(50, 50, 50, 0.75);
+			box-shadow:         0px 1px 15px rgba(50, 50, 50, 0.75);
+		}
+		#parent
+		{
+			margin-left:7%;
+			margin-bottom:10%;
+		}

@@ -139,6 +139,10 @@
     <Content Include="bootstrap\img\glyphicons-halflings.png" />
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="Chart\highCharts.js" />
+    <Content Include="Chart\index.html" />
+    <Content Include="Chart\jquery.highchartTable.js" />
+    <Content Include="Chart\jquery.min.js" />
     <Content Include="ControlPanelMG.aspx" />
     <Content Include="docs\bootstrap.css" />
     <Content Include="docs\docs.css" />
