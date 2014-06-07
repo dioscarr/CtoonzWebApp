@@ -131,6 +131,24 @@
     <Content Include="App_Data\Songs_log.ldf">
       <DependentUpon>Songs.mdf</DependentUpon>
     </Content>
+    <Content Include="bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="ControlPanelMG.aspx" />
+    <Content Include="docs\bootstrap.css" />
+    <Content Include="docs\docs.css" />
+    <Content Include="docs\docs.js" />
+    <Content Include="docs\jquery-1.9.1.js" />
+    <Content Include="docs\jquery-2.1.0.js" />
+    <Content Include="docs\prettify.js" />
+    <Content Include="docs\spectrum.css" />
+    <Content Include="docs\spectrum.js" />
+    <Content Include="docs\toc.js" />
     <Content Include="images\bk1.jpg" />
     <Content Include="images\simplehead.png" />
     <Content Include="js1\add-on\jplayer.playlist.min.js" />
@@ -207,6 +225,13 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="BusinessBase.vb" />
+    <Compile Include="ControlPanelMG.aspx.designer.vb">
+      <DependentUpon>ControlPanelMG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanelMG.aspx.vb">
+      <DependentUpon>ControlPanelMG.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Customer.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
