@@ -6,26 +6,46 @@
     <title></title>
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
-
+         <%-- boostrap --%>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+   
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+        <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+        
+         <%-- color picker --%>
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    
+    
+  
+   <div class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Ctoonz Music</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="SongsManagement.aspx">Songs Management</a></li>
+            <li><a href="ControlPanel.aspx">Dashboard</a></li>      
+          </ul>
+     
+    
+     
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</div>
+
+
+
+   
     <form runat="server">
     <div class="page">
-        <div class="header">
-            <div class="title">
-                <h1>
-                    &nbsp;</h1>
-            </div>
-            <div class="clear hideSkiplink">
-                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
-                    <Items>
-                        <asp:MenuItem NavigateUrl="~/SongsManagement.aspx" Text="Home"/>
-                        <asp:MenuItem NavigateUrl="~/startpage.aspx" Text="Logout"/>
-                    </Items>
-                </asp:Menu>
-            </div>
-        </div>
         <div class="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
         </div>

@@ -1,6 +1,16 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="SongsManagement.aspx.vb" Inherits="Ajax.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <script src="Scripts/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>
+   
+         <%-- boostrap --%>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+   
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+        <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+     <%-- End boostrap --%>
+
+     <script src="Scripts/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>
     <script src="Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <link href="Styles/jquery-ui.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>

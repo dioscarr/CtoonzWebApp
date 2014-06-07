@@ -23,15 +23,6 @@ Partial Public Class Site
     Protected WithEvents HeadContent As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
-    '''NavigationMenu control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents NavigationMenu As Global.System.Web.UI.WebControls.Menu
-
-    '''<summary>
     '''MainContent control.
     '''</summary>
     '''<remarks>
