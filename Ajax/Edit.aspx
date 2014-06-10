@@ -1,6 +1,39 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Edit.aspx.vb" Inherits="Ajax.WebForm6" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <style type="text/css">
+   
+    
+         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+     <script src="Scripts/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-1.4.1.js" type="text/javascript"></script>
+    <link href="Styles/jquery-ui.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var data = '1';
+            $.ajax({
+                type: "POST",
+                url: "ControlPanel.aspx/DashboardWebmethod",
+                data: '{name: ' + data + ' }',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (html) {
+                    var HexColor = html.d
+                    //alert(HexColor);
+                    $('body').css('background', HexColor);
+
+                }
+
+            });
+        });
+    </script>
+    
+    
+    
+    
+     <style type="text/css">
 
         .style7
         {

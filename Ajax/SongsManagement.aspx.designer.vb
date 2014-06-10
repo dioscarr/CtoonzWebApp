@@ -101,7 +101,7 @@ Partial Public Class WebForm2
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
+    'Protected WithEvents ScriptManager1 As Global.System.Web.UI.WebControls.ScriptManager
 
     '''<summary>
     '''myupdatepanel control.
@@ -110,7 +110,7 @@ Partial Public Class WebForm2
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents myupdatepanel As Global.System.Web.UI.UpdatePanel
+    'Protected WithEvents myupdatepanel As Global.System.Web.UI.WebControls.UpdatePanel
 
     '''<summary>
     '''GridView1 control.

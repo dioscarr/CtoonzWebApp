@@ -143,7 +143,6 @@
     <Content Include="Chart\index.html" />
     <Content Include="Chart\jquery.highchartTable.js" />
     <Content Include="Chart\jquery.min.js" />
-    <Content Include="ControlPanelMG.aspx" />
     <Content Include="docs\bootstrap.css" />
     <Content Include="docs\docs.css" />
     <Content Include="docs\docs.js" />
@@ -229,14 +228,9 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="BusinessBase.vb" />
-    <Compile Include="ControlPanelMG.aspx.designer.vb">
-      <DependentUpon>ControlPanelMG.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ControlPanelMG.aspx.vb">
-      <DependentUpon>ControlPanelMG.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="Customer.vb" />
+    <Compile Include="Dashboard.vb" />
+    <Compile Include="DashboardMethods.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

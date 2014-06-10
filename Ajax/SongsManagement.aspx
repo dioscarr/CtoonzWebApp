@@ -7,7 +7,7 @@
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
         <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
-        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+       <%-- <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />--%>
      <%-- End boostrap --%>
 
      <script src="Scripts/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>
@@ -20,6 +20,23 @@
 
 
         $(document).ready(function () {
+
+            var data = '1';
+            $.ajax({
+                type: "POST",
+                url: "ControlPanel.aspx/DashboardWebmethod",
+                data: '{name: ' + data + ' }',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (html) {
+                    var HexColor = html.d
+                    //alert(HexColor);
+                    $('body').css('background', HexColor);
+
+                }
+
+            });
+
 
 
 
@@ -603,177 +620,154 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+  
     <div id="rightsidebarparent" style="position:relative;"> 
         <div id="logoheads">&nbsp;<br />
         </div>
         <div id="mylogo123"></div>
-   
+
 
 
     </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
 
+                <div class="displaylista">
+                    <br />
+                    <div>
+                        <div style="margin-left: 15px;">
 
-    <div class="displaylista">
-    <br />
-        <div>
-            <div style="margin-left:15px; ">
+                            <div id="Adding_table_main_page_top">
+                                <table class="">
+                                    <tr>
+                                        <td style="width: 97px; text-align: right;">Track Name:</td>
+                                        <td style="width: 97px;">
+                                            <asp:TextBox ID="txtTrackName" runat="server"
+                                                Width="96px"></asp:TextBox></td>
+                                        <td style="text-align: right;" class="auto-style2">Artist:</td>
+                                        <td style="width: 97px;">
+                                            <asp:TextBox ID="txtLname" runat="server"
+                                                Width="95px"></asp:TextBox></td>
+                                        <td style="text-align: right;" class="auto-style1">Status</td>
+                                        <td class="auto-style2">
+                                            <asp:TextBox ID="txtSSNum" runat="server" Width="96px"></asp:TextBox>
+                                        </td>
+                                        <td style="width: 97px; text-align: right;">Album Name:</td>
+                                        <td style="width: 97px;">
+                                            <asp:TextBox ID="txtAlbum" runat="server" Width="94px"></asp:TextBox>
+                                        </td>
+                                        <td class="auto-style3">
+                                            <asp:Button ID="btnAdd" runat="server"
+                                                Text="Add" Width="67px" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="7">&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td class="auto-style3"></td>
+                                    </tr>
 
-<div id="Adding_table_main_page_top">
-<table style="width: 890px" border="0">
-
-<%--<tr style="height:30px;"><td colspan="7"></td><td colspan ="2">
-    <div id="MemoBody">
-        &nbsp;<div class="listbox">
-            <div class="nameslist">
-            </div>
-        </div>
-    </div>
-
-    </td></tr>
-<tr>--%>
-
-<td style="width:97px; text-align:right;">Track Name:</td>
-<td style="width:97px;"> 
-            <asp:TextBox ID="txtTrackName" runat="server" 
-                Width="96px"></asp:TextBox></td>
-<td style="text-align:right;" class="auto-style2">Artist:</td>
-<td style="width:97px;"> 
-    <asp:TextBox ID="txtLname" runat="server" 
-                Width="95px"></asp:TextBox></td>
-<td style="text-align:right;" class="auto-style1">Status</td>
-<td class="auto-style2"> <asp:TextBox ID="txtSSNum" runat="server" Width="96px"></asp:TextBox>
-        </td>
-<td style="width:97px; text-align:right;">Album Name:</td>
-<td style="width:97px;"> <asp:TextBox ID="txtAlbum" runat="server" Width="94px"></asp:TextBox>
-        </td>
-<td class="auto-style3"> 
-            <asp:Button ID="btnAdd" runat="server" 
-                Text="Add" Width="67px" /></td>
-
-
-</tr>
-    <tr><td colspan="7">
-        &nbsp;</td>
-        <td>
-             &nbsp;</td>
-         <td class="auto-style3">
-            
-    </tr>
-
-</table>
-</div>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
-
-    <div id="main_container">
-<div id="displaylisth">
-        <label id="lblDsplayinfo" >SONG INFORMATION</label>
-</div>
- 
-        
-    
-
-
-
-
-    <div class="displaylistb">
-    <br />
-        <div>
-            <div style="margin-left:15px; ">
-
-            <table border="0" style="margin-left: 10px; width: 879px; height: 50px;  ">
-                <tr class="">
-                    <td class="style8">
-                        <asp:Button ID="btnListAll" runat="server" Text="List All" Width="111px" Height="26px" />
-                    </td>
-                    <td class="style14">
-                        &nbsp;</td>
-                    <td class="style18" id="rb2bk">
-                        <asp:RadioButtonList ID="rb2" runat="server" RepeatColumns="4" Width="329px">
-                            <asp:ListItem Value="rbTrack">Track</asp:ListItem>
-                            <asp:ListItem Value="rbArtist">Artist</asp:ListItem>
-                            <asp:ListItem Value="rbStatus">Status</asp:ListItem>
-                        </asp:RadioButtonList>
-                    </td>
-                    <td class="style16">
-                    </td>
-                    <td class="style17">
-                         
-                        <br />
-                        <br />
-                        <asp:Button ID="btnFilter" runat="server" Text="Search" ClientIDMode="static" Width="66px" />
-                        <strong>&nbsp;<asp:TextBox ID="txtFiltrerID" runat="server" Width="61px"></asp:TextBox></strong>
-                    </td>
-                </tr>
-             
-               
-            </table>
-                <asp:ScriptManager ID="ScriptManager1" runat="server">
-                </asp:ScriptManager>
-            <asp:UpdatePanel ID="myupdatepanel" runat="server">
-            <ContentTemplate>
-                        <asp:GridView ID="GridView1" runat="server" class="whitecolor" AutoGenerateColumns="False" BorderStyle="None"
-                            Width="881px" PageSize="5">
-                            <RowStyle Width="883px" Height="25px" Font-Size="11px" BorderStyle="None"  />
-                           
-                            <SelectedRowStyle  />
-                            <Columns>
-                                <asp:BoundField DataField="ID" HeaderText="ID" HeaderStyle-BackColor=""></asp:BoundField>
-                                <asp:BoundField DataField="Track" HeaderText="Track" />
-                                <asp:BoundField DataField="Artist" HeaderText="Artist" />
-                                <asp:BoundField DataField="Status" HeaderText="Status" />
-                                <asp:BoundField DataField="Album" HeaderText="Album" />
-                                
-                            </Columns>
-                            <HeaderStyle   ForeColor="black" />
-                        </asp:GridView>
-                        </ContentTemplate>
-                        <Triggers >
-                      <%--<asp:AsyncPostBackTrigger ControlID="btnFilter"  EventName="click" />--%>
-                       <asp:AsyncPostBackTrigger ControlID="rb2" EventName="SelectedIndexChanged" />
-                         <%-- <asp:AsyncPostBackTrigger ControlID="btnListAll" EventName="Click" />--%>
-                         <%-- <asp:AsyncPostBackTrigger ControlID="btnAdd" EventName="Click" />--%>
-                        </Triggers>
-                        </asp:UpdatePanel>
-            <br />
-            
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="displaylisth">
+                    <label id="lblDsplayinfo">SONG INFORMATION</label>
+                </div>
+            </div>
         </div>
-    </div>
-    <table border="0" style="margin-left: 10px; width: 879px">
-     <tr>
-                    <td colspan="2">
-                    </td>
-                    <td align="center" class="style13">
-                        <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
-                    </td>
-                    <td colspan="2">
-                    </td>
-                </tr>
-    
-    </table>
-       
-        <script src="Scripts/jwplayer.js"></script>
-
-</div>
-
-<script type="text/javascript" src="Scripts/jwplayer.js"></script>
-
-
-       
-       
-
-<script type="text/javascript">
-    
-</script>
-
-
-       
 
 
 
+
+ <div class="row">
+            <div class="col-md-12">
+
+                        <div class="displaylistb">
+                            <br />
+                            <div>
+                                <div style="margin-left: 15px;">
+
+                                    <table border="0" style="margin-left: 10px; width: 879px; height: 50px;">
+                                        <tr class="">
+                                            <td class="style8">
+                                                <asp:Button ID="btnListAll" runat="server" Text="List All" Width="111px" Height="26px" />
+                                            </td>
+                                            <td class="style14">&nbsp;</td>
+                                            <td class="style18" id="rb2bk">
+                                                <asp:RadioButtonList ID="rb2" runat="server" RepeatColumns="4" Width="329px">
+                                                    <asp:ListItem Value="rbTrack">Track</asp:ListItem>
+                                                    <asp:ListItem Value="rbArtist">Artist</asp:ListItem>
+                                                    <asp:ListItem Value="rbStatus">Status</asp:ListItem>
+                                                </asp:RadioButtonList>
+                                            </td>
+                                            <td class="style16"></td>
+                                            <td class="style17">
+
+                                                <br />
+                                                <br />
+                                                <asp:Button ID="btnFilter" runat="server" Text="Search" ClientIDMode="static" Width="66px" />
+                                                <strong>&nbsp;<asp:TextBox ID="txtFiltrerID" runat="server" Width="61px"></asp:TextBox></strong>
+                                            </td>
+                                        </tr>
+
+
+                                    </table>
+                                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                                    </asp:ScriptManager>
+                                    <asp:UpdatePanel ID="myupdatepanel" runat="server">
+                                        <ContentTemplate>
+                                            <asp:GridView ID="GridView1" runat="server" class="whitecolor" AutoGenerateColumns="False" BorderStyle="None"
+                                                Width="881px" PageSize="5">
+                                                <RowStyle Width="883px" Height="25px" Font-Size="11px" BorderStyle="None" />
+
+                                                <SelectedRowStyle />
+                                                <Columns>
+                                                    <asp:BoundField DataField="ID" HeaderText="ID" HeaderStyle-BackColor=""></asp:BoundField>
+                                                    <asp:BoundField DataField="Track" HeaderText="Track" />
+                                                    <asp:BoundField DataField="Artist" HeaderText="Artist" />
+                                                    <asp:BoundField DataField="Status" HeaderText="Status" />
+                                                    <asp:BoundField DataField="Album" HeaderText="Album" />
+
+                                                </Columns>
+                                                <HeaderStyle ForeColor="black" />
+                                            </asp:GridView>
+                                        </ContentTemplate>
+                                        <Triggers>
+                                            <%--<asp:AsyncPostBackTrigger ControlID="btnFilter"  EventName="click" />--%>
+                                            <asp:AsyncPostBackTrigger ControlID="rb2" EventName="SelectedIndexChanged" />
+                                            <%-- <asp:AsyncPostBackTrigger ControlID="btnListAll" EventName="Click" />--%>
+                                            <%-- <asp:AsyncPostBackTrigger ControlID="btnAdd" EventName="Click" />--%>
+                                        </Triggers>
+                                    </asp:UpdatePanel>
+                                    <br />
+
+                                </div>
+                            </div>
+                        </div>
+                        <table border="0" style="margin-left: 10px; width: 879px">
+                            <tr>
+                                <td colspan="2"></td>
+                                <td align="center" class="style13">
+                                    <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
+                                </td>
+                                <td colspan="2"></td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                </div>
+
+
+
+
+  
   
 </asp:Content>

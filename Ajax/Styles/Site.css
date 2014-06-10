@@ -3,8 +3,8 @@
 
 body {
     /*background:#00BFFF;*/
-    background: URL(../images/simplehead.png);
-    background-size: auto;
+  
+    background-size: 1170px;
     background-position: top center;
     font-size: .80em;
     font-family: " Helvetica";
@@ -379,7 +379,7 @@ div.accountInfo {
     height: 30px;
     top: -10px;
     position: relative;
-    left: 0px;
+    left:-15px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-left: 0.5px solid #BDBDBD;
@@ -391,9 +391,9 @@ div.accountInfo {
     background-color: #f1f1f1;
     width: 910px;
     height: auto;
-    top: 0px;
+    top: -10px;
     position: relative;
-    left: 0px;
+    left: -15px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-left: 0.5px solid #BDBDBD;
@@ -412,9 +412,9 @@ div.accountInfo {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
     width: 910px;
     height: 100px;
-    top: 0px;
+    top:-32px;
     position: relative;
-    left: 0px;
+    left: -15px;
     border-left: 0.5px solid #BDBDBD;
     border-right: 0.5px solid #BDBDBD;
     border-bottom: 0.5px solid #BDBDBD;
